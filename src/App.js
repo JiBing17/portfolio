@@ -14,6 +14,10 @@ import EmailIcon from '@mui/icons-material/Email';
 import SettingsIcon from '@mui/icons-material/Settings';
 import bgPic from './icons/bg.webp'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPython, faJava, faJs, faReact, faBootstrap } from '@fortawesome/free-brands-svg-icons';
+
+
 function App() {
   return (
     <>
@@ -356,8 +360,64 @@ function App() {
                 <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>Degree: Bachelors</Typography>
               </Box>
             </Box>
-          </Box>  
+
+          </Box>
+
+          <Typography sx={{fontSize: "2rem",  borderBottom: '3px solid #ff00ff', display: "inline", paddingBottom: ".2rem",  fontWeight:"bold"}}> Skills</Typography>
+          <Typography sx={{}}>
+            Throughout my career, I have gained significant experience and skills in various areas of this field.
+          </Typography>
+
+
+          <Box sx={{ display:"flex", alignItems: "center", justifyContent:"space-around", gap: 2}}>
+            <Box>
+              <Typography sx={{fontSize: "2rem"}}> Languages</Typography>
+              <Typography sx={{}}>Python 
+                <FontAwesomeIcon icon={faPython} size="lg" style={{ marginRight: '8px' }} />
+              </Typography> 
+
+              <Typography sx={{}}>C</Typography>
+              <Typography sx={{}}>C++</Typography>
+              <Typography sx={{}}>Java 
+                <FontAwesomeIcon icon={faJava} size="lg" style={{ marginRight: '8px' }} />
+              </Typography>
+              <Typography sx={{}}>Javascript
+                <FontAwesomeIcon icon={faJs} size="lg" style={{ marginRight: '8px' }} />
+              </Typography>
+            </Box>
+            
+            <Box>
+              <Typography sx={{fontSize: "2rem"}}> Frameworks</Typography>
+              <Typography sx={{}}>React
+                <FontAwesomeIcon icon={faReact} size="lg" style={{ marginRight: '8px' }} />
+              </Typography>
+              <Typography sx={{}}>Flask</Typography>
+            </Box>
+            
+            <Box>
+              <Typography sx={{fontSize: "2rem"}}> Databases</Typography>
+              <Typography sx={{}}>MongoDB</Typography>
+            </Box>
+            
+            <Box>
+              <Typography sx={{fontSize: "2rem"}}> Libraries</Typography>
+              <Typography sx={{}}>Material UI</Typography>
+              <Typography sx={{}}>Bootstrap
+                <FontAwesomeIcon icon={faBootstrap} size="lg" style={{ marginRight: '8px' }} />
+
+              </Typography>
+              <Typography sx={{}}>Software and Systems Engineer</Typography>
+            </Box>
+
+          </Box>
+          
+          
+
+  
+      
+    
         </Box>
+
       </Box>
     </>
     
