@@ -1,7 +1,7 @@
 import './App.css';
 import './index.css';
 
-import { Paper, Box, Typography, Button} from '@mui/material';
+import { Paper, Box, Typography, Button, } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CodeIcon from '@mui/icons-material/Code';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -11,11 +11,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import ProjectIcon from '@mui/icons-material/Assignment';
 import EmailIcon from '@mui/icons-material/Email';
-import ServicesIcon from '@mui/icons-material/Build';
-import ApiIcon from '@mui/icons-material/Api';
 import SettingsIcon from '@mui/icons-material/Settings';
-import Email from '@mui/icons-material/Email';
 import bgPic from './icons/bg.webp'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 function App() {
   return (
     <>
@@ -329,7 +327,37 @@ function App() {
           </Box> 
         </Box>
 
+        {/* About Section */}
 
+        <Box sx={{padding: "1rem"}}>
+          <Typography sx={{fontSize: "2rem",  borderBottom: '3px solid #ff00ff', display: "inline", paddingBottom: ".2rem",  fontWeight:"bold"}}> About</Typography>
+
+          {/* Description */}
+          <Typography sx={{marginTop: "1rem"}}>
+            Here is a bit more about me! I'm a junior studying Computer Science at Purdue University. 
+            Passionate about working/learning with others to expand current knowledge base as well as solidify a strong foundation in CS. 
+            Driven by the desire to apply what I learn to real-world situations, turning theory into practice.
+          </Typography>
+
+            
+          {/* Title followed by personal and academic stats */}
+          <Box sx={{display:"flex", flexDirection: "column", alignItems:"center", justifyContent: "space-around", padding:"1rem"}}>
+            
+            <Typography sx={{fontSize: "1.3rem", fontWeight:"bold"}}>Software and Systems Engineer</Typography>
+            <Box sx={{ display:"flex", alignItems:"center", justifyContent: "center"}}>
+              <Box sx={{display:"flex", flexDirection: "column", alignItems:"center", justifyContent: "space-around", padding:"1rem"}}>
+                <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>Email: jibingni17@gmail.com</Typography>
+                <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>City: Indianapolis, Indiana</Typography>
+                <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>Freelance: Available</Typography>
+              </Box>
+              <Box sx={{display:"flex", flexDirection: "column", alignItems:"center", justifyContent: "space-around", padding:"1rem"}}>
+                <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>University: Purdue</Typography>
+                <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>Major: Computer Science</Typography>
+                <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>Degree: Bachelors</Typography>
+              </Box>
+            </Box>
+          </Box>  
+        </Box>
       </Box>
     </>
     
