@@ -12,9 +12,7 @@ const About = () => {
 
         {/* Description */}
         <Typography sx={{marginTop: "1rem"}}>
-        Here is a bit more about me! I'm a junior studying Computer Science at Purdue University. 
-        Passionate about working/learning with others to expand current knowledge base as well as solidify a strong foundation in CS. 
-        Driven by the desire to apply what I learn to real-world situations, turning theory into practice.
+        Here is a bit more about me!
         </Typography>
 
         
