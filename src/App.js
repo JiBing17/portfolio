@@ -449,7 +449,7 @@ function App() {
                     style={{ width: "24px", height: "24px", marginLeft: "0.5rem" }} />
               </Typography>
 
-              <Typography sx={{ display: "inline-flex", alignItems: "center", marginBottom: 1 }}>
+              <Typography sx={{ display: "inline-flex", alignItems: "center", marginBottom: 1}}>
                 Tailwind CSS 
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
                     alt="Tailwind CSS" 
@@ -462,24 +462,11 @@ function App() {
                     alt="Bootstrap" 
                     style={{ width: "24px", height: "24px", marginLeft: "0.5rem" }} />
               </Typography>
-
-
             </Box>
-</Box>
-
-          
-          
-
-  
-      
-    
+          </Box>
         </Box>
-
       </Box>
     </>
-    
-    
-
   );
 }
 

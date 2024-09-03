@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ['Lobster', 'sans-serif'], // Replace 'Lobster' with your chosen font
+    },
   },
   plugins: [],
 };
