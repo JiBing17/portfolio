@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 import Navbar from './pages/Navbar'
 import Hero from './pages/Hero';
 import About from './pages/About';
-
+import Resume from './pages/Resume'
 function App() {
   return (
     <>
@@ -16,11 +16,12 @@ function App() {
       <Box
         sx={{
           flexGrow: 1,
-          marginLeft: '18%', // Adjust for the width of the fixed navbar
+          marginLeft: '18%', 
         }}
       >
         <Hero/>
         <About/>
+        <Resume/>
       </Box>
     </>
   );

@@ -12,16 +12,14 @@ const About = () => {
 
         {/* Description */}
         <Typography sx={{marginTop: "1rem"}}>
-        Here is a bit more about me! I'm a junior studying Computer Science at Purdue University. 
-        Passionate about working/learning with others to expand current knowledge base as well as solidify a strong foundation in CS. 
-        Driven by the desire to apply what I learn to real-world situations, turning theory into practice.
+        Here is a bit more about me!
         </Typography>
 
         
         {/* Title followed by personal and academic stats */}
         <Box sx={{display:"flex", flexDirection: "column", alignItems:"center", justifyContent: "space-around", padding:"1rem"}}>
         
-        <Typography sx={{fontSize: "1.3rem", fontWeight:"bold"}}>Software and Systems Engineer</Typography>
+        <Typography sx={{fontSize: "1.3rem", fontWeight:"bold"}}>Software Engineer</Typography>
         <Box sx={{ display:"flex", alignItems:"center", justifyContent: "center"}}>
             <Box sx={{display:"flex", flexDirection: "column", alignItems:"center", justifyContent: "space-around", padding:"1rem"}}>
             <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>Email: jibingni17@gmail.com</Typography>
