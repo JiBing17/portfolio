@@ -16,7 +16,7 @@ function App() {
       <Box
         sx={{
           flexGrow: 1,
-          marginLeft: '18%', // Adjust for the width of the fixed navbar
+          marginLeft: '18%', 
         }}
       >
         <Hero/>

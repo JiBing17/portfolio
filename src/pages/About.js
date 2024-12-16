@@ -19,7 +19,7 @@ const About = () => {
         {/* Title followed by personal and academic stats */}
         <Box sx={{display:"flex", flexDirection: "column", alignItems:"center", justifyContent: "space-around", padding:"1rem"}}>
         
-        <Typography sx={{fontSize: "1.3rem", fontWeight:"bold"}}>Software and Systems Engineer</Typography>
+        <Typography sx={{fontSize: "1.3rem", fontWeight:"bold"}}>Software Engineer</Typography>
         <Box sx={{ display:"flex", alignItems:"center", justifyContent: "center"}}>
             <Box sx={{display:"flex", flexDirection: "column", alignItems:"center", justifyContent: "space-around", padding:"1rem"}}>
             <Typography sx={{}}> <ChevronRightIcon sx={{color:"#ff00ff"}}/>Email: jibingni17@gmail.com</Typography>
