@@ -3,7 +3,7 @@ import { Box, Typography, Grid } from '@mui/material';
 
 const Resume = () => {
   return (
-    <Box sx={{ padding: '3rem', backgroundColor: '#f5f5f5' }}>
+    <Box sx={{ padding: '1rem', backgroundColor: '#f5f5f5' }} id="resume">
       <Typography
         sx={{
           textAlign: 'center',

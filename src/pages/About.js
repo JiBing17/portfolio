@@ -6,7 +6,7 @@ import pfp from '../icons/IMG_7595.JPEG';
 const About = () => {
   return (
     <>
-      <Box sx={{ padding: '3rem' }}>
+      <Box sx={{ padding: '1rem' }} id="about">
         <Typography sx={{ textAlign: 'center', fontSize: '2.5rem', fontWeight: 'bold', borderBottom: '2px solid #ff00ff', width: '10%', margin: '.5rem auto' }}>About</Typography>
         <Box
           sx={{

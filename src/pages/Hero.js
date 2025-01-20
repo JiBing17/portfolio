@@ -7,13 +7,14 @@ const Hero = () => {
   return (
     <>
       {/* Hero Background Image */}
-      <Box
+      <Box id="home"
         sx={{
           position: 'relative',
           height: '100vh',
           backgroundImage: `url(${bgPic})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          
         }}
       >
         {/* Container for nav links and hero text */}

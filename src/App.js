@@ -9,6 +9,7 @@ import About from './pages/About';
 import Resume from './pages/Resume'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects';
+import Footer from './pages/Footer';
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
       <Skills/>
       <Projects/>
       <Resume/>
+      <Footer/>
     </>
   );
 }
