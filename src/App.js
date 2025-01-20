@@ -10,6 +10,7 @@ import Resume from './pages/Resume'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects';
 import Footer from './pages/Footer';
+import BackToTop from './pages/BackToTop';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
       <Projects/>
       <Resume/>
       <Footer/>
+      <BackToTop/>
     </>
   );
 }
