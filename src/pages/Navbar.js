@@ -14,7 +14,7 @@ const Navbar = () => {
         {/* Navigation Links */}
         <Box
             sx={{
-              position: "absolute",
+              position: "fixed",
               top: '30%',
               left: '1%',
               zIndex: "100",
@@ -26,19 +26,19 @@ const Navbar = () => {
               gap: '.5rem',
             }}
           >
-            <Link href="/home" underline="hover" sx={{ backgroundColor: 'white', borderRadius: '50%', padding: '.5rem' }}>
+            <Link href="/home" underline="hover" sx={{ backgroundColor: '#eeeeee', borderRadius: '50%', padding: '.5rem' }}>
               <HomeIcon sx={{ fontSize: '2rem', color: 'black' }} />
             </Link>
-            <Link href="/about" underline="hover" sx={{ backgroundColor: 'white', borderRadius: '50%', padding: '.5rem' }}>
+            <Link href="/about" underline="hover" sx={{ backgroundColor: '#eeeeee', borderRadius: '50%', padding: '.5rem' }}>
               <PersonIcon sx={{ fontSize: '2rem', color: 'black' }} />
             </Link>
-            <Link href="/skills" underline="hover" sx={{ backgroundColor: 'white', borderRadius: '50%', padding: '.5rem' }}>
+            <Link href="/skills" underline="hover" sx={{ backgroundColor: '#eeeeee', borderRadius: '50%', padding: '.5rem' }}>
               <EditIcon sx={{ fontSize: '2rem', color: 'black' }} />
             </Link>
-            <Link href="/projects" underline="hover" sx={{ backgroundColor: 'white', borderRadius: '50%', padding: '.5rem' }}>
+            <Link href="/projects" underline="hover" sx={{ backgroundColor: '#eeeeee', borderRadius: '50%', padding: '.5rem' }}>
               <WorkIcon sx={{ fontSize: '2rem', color: 'black' }} />
             </Link>
-            <Link href="/resume" underline="hover" sx={{ backgroundColor: 'white', borderRadius: '50%', padding: '.5rem' }}>
+            <Link href="/resume" underline="hover" sx={{ backgroundColor: '#eeeeee', borderRadius: '50%', padding: '.5rem' }}>
               <DescriptionIcon sx={{ fontSize: '2rem', color: 'black' }} />
             </Link>
           </Box>

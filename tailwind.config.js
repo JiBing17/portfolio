@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['Lobster', 'sans-serif'], // Replace 'Lobster' with your chosen font
+      sans: ['Open Sans', 'sans-serif'], // Default `sans` font now includes Open Sans
     },
   },
   plugins: [],
