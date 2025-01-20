@@ -27,8 +27,8 @@ const About = () => {
             sx={{
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'stretch', // Ensure children stretch to fill container height
-              height: '500px', // Define the height of the container
+              alignItems: 'stretch', 
+              height: '500px',
               gap: '2rem',
               marginTop: "4rem"
             }}
@@ -40,8 +40,8 @@ const About = () => {
               alt="Description of image"
               sx={{
                 width: '40%',
-                height: '100%', // Fill the entire height of the container
-                objectFit: 'cover', // Ensure the image covers the container without distortion
+                height: '100%', 
+                objectFit: 'cover', 
                 borderRadius: '15px',
               }}
             />
