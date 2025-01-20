@@ -4,7 +4,7 @@ import { Box, Typography, LinearProgress } from '@mui/material';
 const Skills = () => {
   return (
     <>
-      <Box sx={{ padding: '2rem', backgroundColor: "#f5f5f5"}}>
+      <Box sx={{ padding: '3rem', backgroundColor: "#f5f5f5"}}>
         <Typography
           sx={{
             textAlign: 'center',

@@ -58,7 +58,7 @@ const Projects = () => {
   };
 
   return (
-    <Box sx={{ padding: '2rem' }}>
+    <Box sx={{ padding: '3rem' }}>
       <Typography
         sx={{
           textAlign: 'center',
