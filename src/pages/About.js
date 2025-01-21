@@ -81,8 +81,7 @@ const About = () => {
       >
         <Typography sx={{ textAlign: 'center', width: '80%', color: 'white' }}>
           Hello! 👋 My name is Ji Bing! I’m currently a junior at Purdue University, studying
-          Computer Science 💻. My current interests lie in <strong class="text-coral">web development</strong>,{' '}
-          <strong class="text-coral">software engineering</strong>, and <strong class="text-coral">Human Computer Interaction</strong>.
+          Computer Science 💻. My current interests lie in ,{' '} <strong class="text-coral">software engineering</strong>, <strong class="text-coral">web development</strong>, and <strong class="text-coral">Human Computer Interaction</strong>.
         </Typography>
 
         <Box
@@ -127,7 +126,7 @@ const About = () => {
               }}
             >
               <Typography sx={{ fontSize: '1.3rem', fontWeight: 'bold', color: "white"}}>
-                Software Engineer
+              👨🏻‍💻 Software Engineer
               </Typography>
               <Typography sx={{ fontStyle: 'italic', color: "white"}}>
                 Focus: Software Engineering

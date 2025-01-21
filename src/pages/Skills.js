@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material';
 const Skills = () => {
   const skillsRef = useRef(null);
   const [visible, setVisible] = useState(false);
+
   const skills = [
     { name: 'Python', icon: 'devicon-python-plain', color: '#3776AB' },
     { name: 'C++', icon: 'devicon-cplusplus-plain', color: '#00599C' },
@@ -21,20 +22,19 @@ const Skills = () => {
     { name: 'MongoDB', icon: 'devicon-mongodb-plain', color: '#47A248' },
     { name: 'SQLite', icon: 'devicon-sqlite-plain', color: '#003B57' },
     { name: 'Linux', icon: 'devicon-linux-plain', color: '#FCC624' },
-  ]
+  ];
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setVisible(true);
-            observer.unobserve(entry.target); // Stop observing after animation
+            observer.unobserve(entry.target);
           }
         });
       },
-      {
-        threshold: 0.1, // Trigger when 10% of the section is visible
-      }
+      { threshold: 0.1 }
     );
 
     if (skillsRef.current) {
@@ -67,6 +67,46 @@ const Skills = () => {
         htmlcss: 0,
       };
 
+  // Helper to render a row label + percentage + bar
+  const renderBarRow = (label, value) => (
+    <Box sx={{ marginBottom: '1.5rem' }}>
+      {/* Row with label (left) and percentage (right) */}
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginBottom: '0.5rem',
+      }}>
+        <Typography sx={{ fontWeight: 'bold', color: '#1a3d47' }}>
+          {label}
+        </Typography>
+        <Typography sx={{ fontWeight: 'bold', color: '#1a3d47' }}>
+          {value}%
+        </Typography>
+      </Box>
+
+      {/* Progress bar */}
+      <Box
+        sx={{
+          position: 'relative',
+          height: '10px',
+          width: '100%',
+          backgroundColor: '#e0e0e0',
+          borderRadius: '5px',
+          overflow: 'hidden',
+        }}
+      >
+        <Box
+          sx={{
+            height: '100%',
+            width: `${value}%`,
+            backgroundColor: '#f76e65',
+            transition: 'width 1.3s ease-in-out',
+          }}
+        />
+      </Box>
+    </Box>
+  );
+
   return (
     <Box
       id="skills"
@@ -74,41 +114,43 @@ const Skills = () => {
       sx={{
         padding: '2rem',
         backgroundColor: '#ffffff',
-        // Apply fade-in animation
+        // fade-in animation
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
         transition: 'opacity 1.5s ease-out, transform 1s ease-out',
       }}
     >
       <Typography
-  sx={{
-    textAlign: 'center',
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    position: 'relative', // Allows positioning of the pseudo-element
-    width: '10%',
-    margin: '.5rem auto',
-    color: '#1a3d47',
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      bottom: '-2px', // Aligns with the text's bottom
-      left: 0,
-      width: '100%',
-      height: '2px', // Thickness of the border
-      background: `linear-gradient(
-        to right,
-        #cccccc 20%,     /* Gray before 20% */
-        #f76e65 20%,     /* Start coral color at 20% */
-        #f76e65 40%,     /* End coral color at 40% */
-        #cccccc 40%      /* Gray after 40% */
-      )`, // Gradient starts coral at 20%, ends at 40%
-    },
-  }}
->
-  Skills
-</Typography>
-      <Typography sx={{ textAlign: 'center', marginBottom: '1rem', color: "#1a3d47" }}>
+        sx={{
+          textAlign: 'center',
+          fontSize: '2.5rem',
+          fontWeight: 'bold',
+          position: 'relative',
+          width: '10%',
+          margin: '.5rem auto',
+          color: '#1a3d47',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            bottom: '-2px',
+            left: 0,
+            width: '100%',
+            height: '2px',
+            background: `linear-gradient(
+              to right,
+              #cccccc 20%, 
+              #f76e65 20%, 
+              #f76e65 40%, 
+              #cccccc 40%
+            )`,
+          },
+        }}
+      >
+        Skills
+      </Typography>
+      <Typography
+        sx={{ textAlign: 'center', marginBottom: '1rem', color: '#1a3d47' }}
+      >
         Programming Languages and Developer Tools
       </Typography>
 
@@ -125,145 +167,23 @@ const Skills = () => {
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             width: '100%',
             gap: '3rem',
           }}
         >
           {/* Left Column */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '40%' }}>
-            <Box sx={{ width: '100%' }}>
-              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold" }}>Python</Typography>
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: '10px',
-                  width: '100%',
-                  backgroundColor: '#e0e0e0',
-                  borderRadius: '5px',
-                  overflow: 'hidden',
-                }}
-              >
-                <Box
-                  sx={{
-                    height: '100%',
-                    width: `${barValues.python}%`,
-                    backgroundColor: '#f76e65',
-                    transition: 'width 1.3s ease-in-out',
-                  }}
-                ></Box>
-              </Box>
-
-              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold" }}>C/C++</Typography>
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: '10px',
-                  width: '100%',
-                  backgroundColor: '#e0e0e0',
-                  borderRadius: '5px',
-                  overflow: 'hidden',
-                }}
-              >
-                <Box
-                  sx={{
-                    height: '100%',
-                    width: `${barValues.c}%`,
-                    backgroundColor: '#f76e65',
-                    transition: 'width 1.3s ease-in-out',
-                  }}
-                ></Box>
-              </Box>
-
-              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold" }}>SQL</Typography>
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: '10px',
-                  width: '100%',
-                  backgroundColor: '#e0e0e0',
-                  borderRadius: '5px',
-                  overflow: 'hidden',
-                }}
-              >
-                <Box
-                  sx={{
-                    height: '100%',
-                    width: `${barValues.sql}%`,
-                    backgroundColor: '#f76e65',
-                    transition: 'width 1.3s ease-in-out',
-                  }}
-                ></Box>
-              </Box>
-            </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', width: '40%' }}>
+            {renderBarRow('Python', barValues.python)}
+            {renderBarRow('C/C++', barValues.c)}
+            {renderBarRow('SQL', barValues.sql)}
           </Box>
 
           {/* Right Column */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '40%' }}>
-            <Box sx={{ width: '100%' }}>
-              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold" }}>Java</Typography>
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: '10px',
-                  width: '100%',
-                  backgroundColor: '#e0e0e0',
-                  borderRadius: '5px',
-                  overflow: 'hidden',
-                }}
-              >
-                <Box
-                  sx={{
-                    height: '100%',
-                    width: `${barValues.java}%`,
-                    backgroundColor: '#f76e65',
-                    transition: 'width 1.3s ease-in-out',
-                  }}
-                ></Box>
-              </Box>
-
-              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold"}}>JavaScript</Typography>
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: '10px',
-                  width: '100%',
-                  backgroundColor: '#e0e0e0',
-                  borderRadius: '5px',
-                  overflow: 'hidden',
-                }}
-              >
-                <Box
-                  sx={{
-                    height: '100%',
-                    width: `${barValues.javascript}%`,
-                    backgroundColor: '#f76e65',
-                    transition: 'width 1.3s ease-in-out',
-                  }}
-                ></Box>
-              </Box>
-
-              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold"}}>HTML/CSS</Typography>
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: '10px',
-                  width: '100%',
-                  backgroundColor: '#e0e0e0',
-                  borderRadius: '5px',
-                  overflow: 'hidden',
-                }}
-              >
-                <Box
-                  sx={{
-                    height: '100%',
-                    width: `${barValues.htmlcss}%`,
-                    backgroundColor: '#f76e65',
-                    transition: 'width 1.3s ease-in-out',
-                  }}
-                ></Box>
-              </Box>
-            </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'column', width: '40%' }}>
+            {renderBarRow('Java', barValues.java)}
+            {renderBarRow('JavaScript', barValues.javascript)}
+            {renderBarRow('HTML/CSS', barValues.htmlcss)}
           </Box>
         </Box>
       </Box>
@@ -281,9 +201,14 @@ const Skills = () => {
         }}
       >
         {skills.map((tech) => (
-          <Box key={tech.name} sx={{ textAlign: 'center'}}>
-            <i className={tech.icon} style={{ fontSize: '40px', color: tech.color }}></i>
-            <Typography sx={{ fontSize: '.8rem', fontWeight: 'bold', color: "#1a3d47" }}>{tech.name}</Typography>
+          <Box key={tech.name} sx={{ textAlign: 'center' }}>
+            <i
+              className={tech.icon}
+              style={{ fontSize: '40px', color: tech.color }}
+            />
+            <Typography sx={{ fontSize: '.8rem', fontWeight: 'bold', color: '#1a3d47' }}>
+              {tech.name}
+            </Typography>
           </Box>
         ))}
       </Box>

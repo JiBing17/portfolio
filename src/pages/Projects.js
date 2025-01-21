@@ -36,7 +36,7 @@ const projects = [
   {
     title: 'EvoPlan',
     tools: ['React', 'Flask', 'SQLAlchemy', 'Open-Meteo API', 'Google Geolocation API'],
-    github: 'https://github.com/example/project3',
+    github: 'https://github.com/Z3yphr/CS307-Project',
     picture: project3,
     description:
       'I collaborated in a six-member Scrum team, contributing to sprint planning, stand-ups, retrospectives, and backlog management, delivering 70+ high-value features. Engineered a client-server application using React.js for front-end, Flask for server-side development, SQLAlchemy for database, and integrated APIs like Weather API and Geolocation API for real-time functionality.',
@@ -237,6 +237,8 @@ const Projects = () => {
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
+              backgroundColor: '#1a3d47', // Theme background color
+              color: 'white', // White text for contrast
               padding: 0,
             }}
           >
@@ -248,15 +250,16 @@ const Projects = () => {
                 right: 16,
                 color: '#ffffff',
                 zIndex: 10,
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
                 '&:hover': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.4)',
                 },
               }}
               onClick={handleClose}
             >
               <CloseIcon />
             </IconButton>
+
             {/* Project Image */}
             <Box
               sx={{
@@ -268,16 +271,67 @@ const Projects = () => {
                 height: '70vh',
               }}
             />
+
             {/* Project Description */}
-            <Box sx={{ padding: '1rem', textAlign: 'center', width: '70%' }}>
-              <Typography variant="h5" sx={{ marginBottom: '1rem' }}>
+            <Box
+              sx={{
+                padding: '1rem',
+                textAlign: 'center',
+                width: '100%',
+                backgroundColor: '#ffffff', 
+                borderRadius: '8px',
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  marginBottom: '1rem',
+                  fontWeight: 'bold',
+                  color: '#1a3d47',
+                }}
+              >
                 {selectedProject.title}
               </Typography>
-              <Typography>{selectedProject.description}</Typography>
+              <Typography
+                sx={{
+                  marginBottom: '1rem',
+                  color: '#1a3d47',
+                }}
+              >
+                {selectedProject.description}
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: 'bold',
+                  color: '#1a3d47',
+                }}
+              >
+                Tools: {selectedProject.tools.join(', ')}
+              </Typography>
+
+              {/* GitHub Button */}
+              <Button
+                variant="contained"
+                href={selectedProject.github}
+                target="_blank"
+                sx={{
+                  marginTop: '1rem',
+                  backgroundColor: '#ff8578',
+                  color: 'white',
+                  '&:hover': {
+                    backgroundColor: '#e76a5b',
+                  },
+                }}
+              >
+                View on GitHub
+              </Button>
             </Box>
           </DialogContent>
         )}
       </Dialog>
+
     </Box>
   );
 };
