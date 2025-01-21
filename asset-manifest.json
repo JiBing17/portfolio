@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/my-project/static/css/main.3860d937.css",
-    "main.js": "/my-project/static/js/main.bcfa3f88.js",
-    "static/media/hero_background.png": "/my-project/static/media/hero_background.60272b7beb417b0abc55.png",
-    "static/media/project-2.png": "/my-project/static/media/project-2.0fdba5345071504eda07.png",
-    "static/media/IMG_7595.JPEG": "/my-project/static/media/IMG_7595.f53ee09ba47c2743b7fb.JPEG",
-    "static/media/project-1.png": "/my-project/static/media/project-1.8c4eb9657fd9d767d0ab.png",
-    "static/media/project-3.png": "/my-project/static/media/project-3.24a33876b6e9dfac7b5c.png",
-    "index.html": "/my-project/index.html",
-    "main.3860d937.css.map": "/my-project/static/css/main.3860d937.css.map",
-    "main.bcfa3f88.js.map": "/my-project/static/js/main.bcfa3f88.js.map"
+    "main.css": "/JiBing17/portfolio.git/static/css/main.3860d937.css",
+    "main.js": "/JiBing17/portfolio.git/static/js/main.fcf094c1.js",
+    "static/media/hero_background.png": "/JiBing17/portfolio.git/static/media/hero_background.60272b7beb417b0abc55.png",
+    "static/media/project-2.png": "/JiBing17/portfolio.git/static/media/project-2.0fdba5345071504eda07.png",
+    "static/media/IMG_7595.JPEG": "/JiBing17/portfolio.git/static/media/IMG_7595.f53ee09ba47c2743b7fb.JPEG",
+    "static/media/project-1.png": "/JiBing17/portfolio.git/static/media/project-1.8c4eb9657fd9d767d0ab.png",
+    "static/media/project-3.png": "/JiBing17/portfolio.git/static/media/project-3.24a33876b6e9dfac7b5c.png",
+    "index.html": "/JiBing17/portfolio.git/index.html",
+    "main.3860d937.css.map": "/JiBing17/portfolio.git/static/css/main.3860d937.css.map",
+    "main.fcf094c1.js.map": "/JiBing17/portfolio.git/static/js/main.fcf094c1.js.map"
   },
   "entrypoints": [
     "static/css/main.3860d937.css",
-    "static/js/main.bcfa3f88.js"
+    "static/js/main.fcf094c1.js"
   ]
 }
