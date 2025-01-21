@@ -73,7 +73,7 @@ const Skills = () => {
       ref={skillsRef}
       sx={{
         padding: '2rem',
-        backgroundColor: 'gray',
+        backgroundColor: '#ffffff',
         // Apply fade-in animation
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
@@ -81,18 +81,34 @@ const Skills = () => {
       }}
     >
       <Typography
-        sx={{
-          textAlign: 'center',
-          fontSize: '2.5rem',
-          fontWeight: 'bold',
-          borderBottom: '2px solid #f76e65',
-          width: '10%',
-          margin: '.5rem auto',
-        }}
-      >
-        Skills
-      </Typography>
-      <Typography sx={{ textAlign: 'center', marginBottom: '1rem' }}>
+  sx={{
+    textAlign: 'center',
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    position: 'relative', // Allows positioning of the pseudo-element
+    width: '10%',
+    margin: '.5rem auto',
+    color: '#1a3d47',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: '-2px', // Aligns with the text's bottom
+      left: 0,
+      width: '100%',
+      height: '2px', // Thickness of the border
+      background: `linear-gradient(
+        to right,
+        #cccccc 20%,     /* Gray before 20% */
+        #f76e65 20%,     /* Start coral color at 20% */
+        #f76e65 40%,     /* End coral color at 40% */
+        #cccccc 40%      /* Gray after 40% */
+      )`, // Gradient starts coral at 20%, ends at 40%
+    },
+  }}
+>
+  Skills
+</Typography>
+      <Typography sx={{ textAlign: 'center', marginBottom: '1rem', color: "#1a3d47" }}>
         Programming Languages and Developer Tools
       </Typography>
 
@@ -117,7 +133,7 @@ const Skills = () => {
           {/* Left Column */}
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '40%' }}>
             <Box sx={{ width: '100%' }}>
-              <Typography sx={{ marginBottom: '0.5rem' }}>Python</Typography>
+              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold" }}>Python</Typography>
               <Box
                 sx={{
                   position: 'relative',
@@ -138,7 +154,7 @@ const Skills = () => {
                 ></Box>
               </Box>
 
-              <Typography sx={{ marginBottom: '0.5rem' }}>C/C++</Typography>
+              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold" }}>C/C++</Typography>
               <Box
                 sx={{
                   position: 'relative',
@@ -159,7 +175,7 @@ const Skills = () => {
                 ></Box>
               </Box>
 
-              <Typography sx={{ marginBottom: '0.5rem' }}>SQL</Typography>
+              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold" }}>SQL</Typography>
               <Box
                 sx={{
                   position: 'relative',
@@ -185,7 +201,7 @@ const Skills = () => {
           {/* Right Column */}
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '40%' }}>
             <Box sx={{ width: '100%' }}>
-              <Typography sx={{ marginBottom: '0.5rem' }}>Java</Typography>
+              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold" }}>Java</Typography>
               <Box
                 sx={{
                   position: 'relative',
@@ -206,7 +222,7 @@ const Skills = () => {
                 ></Box>
               </Box>
 
-              <Typography sx={{ marginBottom: '0.5rem' }}>JavaScript</Typography>
+              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold"}}>JavaScript</Typography>
               <Box
                 sx={{
                   position: 'relative',
@@ -227,7 +243,7 @@ const Skills = () => {
                 ></Box>
               </Box>
 
-              <Typography sx={{ marginBottom: '0.5rem' }}>HTML/CSS</Typography>
+              <Typography sx={{ marginBottom: '0.5rem', color: "#1a3d47", fontWeight: "bold"}}>HTML/CSS</Typography>
               <Box
                 sx={{
                   position: 'relative',
@@ -267,7 +283,7 @@ const Skills = () => {
         {skills.map((tech) => (
           <Box key={tech.name} sx={{ textAlign: 'center'}}>
             <i className={tech.icon} style={{ fontSize: '40px', color: tech.color }}></i>
-            <Typography sx={{ fontSize: '.8rem', fontWeight: 'bold' }}>{tech.name}</Typography>
+            <Typography sx={{ fontSize: '.8rem', fontWeight: 'bold', color: "#1a3d47" }}>{tech.name}</Typography>
           </Box>
         ))}
       </Box>

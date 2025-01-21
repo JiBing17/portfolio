@@ -39,10 +39,11 @@ const About = () => {
       ref={aboutRef}
       sx={{
         padding: '2rem',
-        backgroundColor: 'white',
+        backgroundColor: '#1a3d47',
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
         transition: 'opacity 2s ease-out, transform 1s ease-out',
+        
       }}
     >
       <Typography
@@ -50,9 +51,19 @@ const About = () => {
           textAlign: 'center',
           fontSize: '2.5rem',
           fontWeight: 'bold',
-          borderBottom: '2px solid #f76e65',
+          position: 'relative',
           width: '10%',
           margin: '.5rem auto',
+          color: 'white',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            bottom: '-2px',
+            left: 0,
+            width: '100%',
+            height: '2px', 
+            background: 'linear-gradient(to right, #f76e65 19%, #ffffff 25%)',
+          },
         }}
       >
         About
@@ -68,10 +79,10 @@ const About = () => {
           margin: 'auto',
         }}
       >
-        <Typography sx={{ textAlign: 'center', width: '80%', color: '#232323' }}>
+        <Typography sx={{ textAlign: 'center', width: '80%', color: 'white' }}>
           Hello! 👋 My name is Ji Bing! I’m currently a junior at Purdue University, studying
-          Computer Science 💻. My current interests lie in <strong>web development</strong>,{' '}
-          <strong>software engineering</strong>, and <strong>Human Computer Interaction</strong>.
+          Computer Science 💻. My current interests lie in <strong class="text-coral">web development</strong>,{' '}
+          <strong class="text-coral">software engineering</strong>, and <strong class="text-coral">Human Computer Interaction</strong>.
         </Typography>
 
         <Box
@@ -115,10 +126,10 @@ const About = () => {
                 padding: '1rem',
               }}
             >
-              <Typography sx={{ fontSize: '1.3rem', fontWeight: 'bold' }}>
+              <Typography sx={{ fontSize: '1.3rem', fontWeight: 'bold', color: "white"}}>
                 Software Engineer
               </Typography>
-              <Typography sx={{ fontStyle: 'italic' }}>
+              <Typography sx={{ fontStyle: 'italic', color: "white"}}>
                 Focus: Software Engineering
               </Typography>
 
@@ -138,11 +149,11 @@ const About = () => {
                     padding: '1rem',
                   }}
                 >
-                  <Typography>
+                  <Typography sx={{color: "white"}}>
                     <ChevronRightIcon sx={{ color: '#f76e65' }} />
                     <strong>Email:</strong> jibingni17@gmail.com
                   </Typography>
-                  <Typography>
+                  <Typography sx={{color: "white"}}>
                     <ChevronRightIcon sx={{ color: '#f76e65' }} />
                     <strong>Location:</strong> Indianapolis, Indiana
                   </Typography>
@@ -155,43 +166,43 @@ const About = () => {
                     padding: '1rem',
                   }}
                 >
-                  <Typography>
+                  <Typography sx={{color: "white"}}>
                     <ChevronRightIcon sx={{ color: '#f76e65' }} />
                     <strong>University:</strong> Purdue
                   </Typography>
-                  <Typography>
+                  <Typography sx={{color: "white"}}>
                     <ChevronRightIcon sx={{ color: '#f76e65' }} />
                     <strong>Major:</strong> Computer Science
                   </Typography>
                 </Box>
               </Box>
 
-              <Typography sx={{ margin: '.5rem 0' }}>
+              <Typography sx={{ margin: '.5rem 0', color: "white"}}>
                 My academic journey includes experience as an
-                <strong> Undergraduate Teaching Assistant</strong>, guiding
-                students in core courses like <strong>Object Oriented Programming</strong>,{' '}
-                <strong>C Programming</strong>, and <strong>Tools</strong>. Additionally, I
-                have served as a tutor for <strong>Horizons</strong>, offering 1-on-1, group
+                <strong class="text-coral"> Undergraduate Teaching Assistant</strong>, guiding
+                students in core courses like <strong class="text-coral">Object Oriented Programming</strong>,{' '}
+                <strong class="text-coral">C Programming</strong>, and <strong class="text-coral">Tools</strong>. Additionally, I
+                have served as a tutor for <strong class="text-coral">Horizons</strong>, offering 1-on-1, group
                 tutoring, and office hours to enhance understanding of{' '}
-                <strong>Python programming</strong>, <strong>Systems Programming</strong>,{' '}
-                <strong>Competitive Programming</strong>, and{' '}
-                <strong>Software Engineering</strong>.
+                <strong class="text-coral">Python programming</strong>, <strong class="text-coral">Systems Programming</strong>,{' '}
+                <strong class="text-coral">Competitive Programming</strong>, and{' '}
+                <strong class="text-coral">Software Engineering</strong>.
               </Typography>
 
-              <Typography sx={{ margin: '.5rem 0' }}>
+              <Typography sx={{ margin: '.5rem 0', color: "white" }}>
                 I have also conducted research developing AI-driven NPCs with
-                <strong> Unreal Engine</strong> and <strong>machine learning</strong>, 
-                designing a landing page for the <strong>ECELabs.io</strong> website to support remote 
+                <strong class="text-coral"> Unreal Engine</strong> and <strong class="text-coral">machine learning</strong>, 
+                designing a landing page for the <strong class="text-coral">ECELabs.io</strong> website to support remote 
                 hardware lab access, and creating an AI-powered chatbot for 
-                <strong> Wabash National&apos;s</strong> website to reduce reliance on call 
+                <strong class="text-coral"> Wabash National&apos;s</strong> website to reduce reliance on call 
                 center agents.
               </Typography>
 
-              <Typography sx={{ margin: '.5rem 0' }}>
-                Outside of tech, I enjoy staying active with <strong>cardio</strong>, watching{' '}
-                <strong>movies/shows</strong>, playing <strong>video games</strong>, and expressing
-                creativity through <strong>drawing</strong>. This year, I’m also exploring new
-                hobbies, such as <strong>card collecting</strong>.
+              <Typography sx={{ margin: '.5rem 0', color: "white" }}>
+                Outside of tech, I enjoy staying active with <strong class="text-coral">cardio</strong>, watching{' '}
+                <strong class="text-coral">movies/shows</strong>, playing <strong class="text-coral">video games</strong>, and expressing
+                creativity through <strong class="text-coral">drawing</strong>. This year, I’m also exploring new
+                hobbies, such as <strong class="text-coral">card collecting</strong>.
               </Typography>
             </Box>
           </Box>

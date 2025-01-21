@@ -9,6 +9,8 @@ const Footer = () => {
     <Box
       sx={{
         padding: '1rem',
+        backgroundColor: '#1a3d47',
+
       }}
     >
       {/* Top Section */}
@@ -17,8 +19,7 @@ const Footer = () => {
           textAlign: 'center',
           fontSize: '2.5rem',
           fontWeight: 'bold',
-          
-          color: "rgb(69, 80, 91)"
+          color: "white"
         }}
       >
         Ji Bing Ni
@@ -28,7 +29,7 @@ const Footer = () => {
           textAlign: 'center',
           fontStyle: 'italic',
           marginBottom: '.5rem',
-          color: "rgb(69, 80, 91)"
+          color: "white"
 
         }}
       >
@@ -124,15 +125,15 @@ const Footer = () => {
           mt: '1rem',
         }}
       >
-        <Typography sx={{color: "rgb(69, 80, 91)"}}>
-          © <strong>Ji Bing 2024.</strong> All Rights Reserved.
+        <Typography sx={{ color: "white"}}>
+          © <strong >Ji Bing 2025.</strong> All Rights Reserved.
         </Typography>
         <Typography
           sx={{
             position: 'absolute',
             right: "5%",
             fontStyle: 'italic',
-            color: "rgb(69, 80, 91)"
+            color: "white"
         }}
         >
           Last Updated: January 2025

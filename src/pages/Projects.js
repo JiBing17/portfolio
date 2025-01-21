@@ -92,6 +92,8 @@ const Projects = () => {
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
         transition: 'opacity 1.5s ease-out, transform 1s ease-out',
+        backgroundColor: '#1a3d47',
+
       }}
     >
       <Typography
@@ -99,14 +101,44 @@ const Projects = () => {
           textAlign: 'center',
           fontSize: '2.5rem',
           fontWeight: 'bold',
-          borderBottom: '2px solid #ff00ff',
+          position: 'relative', // For positioning the pseudo-element
           width: '10%',
           margin: '.5rem auto',
+          color: 'white',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            bottom: '-2px', // Align below text
+            left: 0,
+            width: '100%',
+            height: '2px', // Border thickness
+            background: `linear-gradient(
+              to right,
+              white 0%,          /* White starts */
+              white 35%,         /* White until 35% */
+              #ff8578 35%,       /* Coral starts at 35% */
+              #ff8578 65%,       /* Coral ends at 65% */
+              white 65%          /* White resumes after 65% */
+            )`, // Gradient creates the coral center with visible white edges
+            zIndex: 1, // Keeps this layer above the main line
+          },
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            bottom: '-2px', // Same alignment
+            left: 0,
+            width: '100%',
+            height: '2px',
+            backgroundColor: 'white', // Full white border underneath
+            zIndex: 0, // Keeps this layer below the gradient
+          },
         }}
       >
         Projects
       </Typography>
-      <Typography sx={{ textAlign: 'center', marginBottom: '1rem' }}>A collection of my work!</Typography>
+
+
+      <Typography sx={{ textAlign: 'center', marginBottom: '1rem', color: "white" }}>A collection of my work!</Typography>
 
       <Grid container spacing={4} sx={{ marginTop: '2rem', width: '90%', margin: '0 auto' }}>
         {projects.map((project, index) => (

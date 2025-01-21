@@ -11,28 +11,38 @@ const Hero = () => {
         position: 'relative',
         width: '100%',
         height: '100vh',
-        // Hide any overflow on the horizontal axis to remove the scrollbar
         overflowX: 'hidden',
         backgroundImage: `url(${bgPic})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
+      {/* Overlay */}
+      <Box
+        sx={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3))`, // Semi-transparent gradient overlay
+          zIndex: 1, // Ensures the overlay is above the background image
+        }}
+      ></Box>
+
       {/* Container for nav links and hero text */}
       <Box
         sx={{
+          position: 'relative', // Ensure this is above the overlay
+          zIndex: 2,
           display: 'flex',
-          position: 'absolute',
           top: '30%',
           left: '10%',
           padding: '1rem',
           alignItems: 'center',
           justifyContent: 'start',
           width: '100%',
-          // Define the keyframes directly in sx:
           '@keyframes popIn': {
             '0%': {
-              transform: 'translate(100px, 40px) scale(0.7)',
+              transform: 'translate(60px, 40px) scale(0.4)',
               opacity: 0,
             },
             '100%': {
@@ -40,7 +50,6 @@ const Hero = () => {
               opacity: 1,
             },
           },
-          // Apply the animation
           animation: 'popIn 1s ease-out forwards',
         }}
       >
@@ -63,10 +72,10 @@ const Hero = () => {
             Ji Bing Ni
           </Typography>
 
-          <Typography sx={{ color: 'white', fontSize: '2rem'}}>
+          <Typography sx={{ color: 'white', fontSize: '2rem' }}>
             I&apos;m a{' '}
             <TypeAnimation
-              sequence={['CS major @ Purdue ', 1000, 'Learner', 1000, 'Developer', 1000, 'Designer', 1000]}
+              sequence={['CS major @ Purdue ', 1000, 'Developer', 1000, 'Learner', 1000, 'Designer', 1000, 'Innovator', 1000]}
               speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
               style={{ display: 'inline-block', color: '#f76e65' }}
               repeat={Infinity}
