@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Box,
   Typography,
@@ -46,6 +46,32 @@ const projects = [
 const Projects = () => {
   const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const projectsRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target); // Stop observing after animation
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the section is visible
+    );
+
+    if (projectsRef.current) {
+      observer.observe(projectsRef.current);
+    }
+
+    return () => {
+      if (projectsRef.current) {
+        observer.unobserve(projectsRef.current);
+      }
+    };
+  }, []);
 
   const handleOpen = (project) => {
     setSelectedProject(project);
@@ -58,7 +84,16 @@ const Projects = () => {
   };
 
   return (
-    <Box sx={{ padding: '1rem' }} id="projects">
+    <Box
+      id="projects"
+      ref={projectsRef}
+      sx={{
+        padding: '1rem',
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'opacity 1.5s ease-out, transform 1s ease-out',
+      }}
+    >
       <Typography
         sx={{
           textAlign: 'center',
@@ -75,7 +110,18 @@ const Projects = () => {
 
       <Grid container spacing={4} sx={{ marginTop: '2rem', width: '90%', margin: '0 auto' }}>
         {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            key={index}
+            sx={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? 'translateY(0)' : 'translateY(20px)',
+              transition: `opacity 1s ease-out ${index * 0.3}s, transform 1s ease-out ${index * 0.3}s`,
+            }}
+          >
             <Card
               sx={{
                 position: 'relative',

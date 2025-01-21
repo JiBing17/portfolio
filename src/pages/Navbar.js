@@ -45,7 +45,7 @@ const Navbar = () => {
   };
 
   const getButtonStyle = (id) => ({
-    backgroundColor: activeSection === id ? '#ff9800' : '#eeeeee', // Highlight active button
+    backgroundColor: activeSection === id || hoveredButton === id ? '#f76e65' : '#eeeeee',
     borderRadius: '50px',
     padding: '.5rem',
     cursor: 'pointer',
@@ -53,23 +53,24 @@ const Navbar = () => {
     alignItems: 'center',
     justifyContent: 'start',
     transition: 'all 0.3s ease-in-out',
-    width: hoveredButton === id ? '120px' : '50px', // Expand width only on hover
-    height: '50px', // Consistent height
-    overflow: 'hidden', // Hide overflowing content
+    transform: hoveredButton === id ? 'scale(1.1)' : 'scale(1)', // Add scaling effect
+    width: hoveredButton === id ? '120px' : '50px',
+    height: '50px',
+    overflow: 'hidden',
     whiteSpace: 'nowrap',
   });
 
   const getIconStyle = (id) => ({
     fontSize: '2rem',
-    color: activeSection === id ? 'white' : 'black',
+    color: activeSection === id || hoveredButton === id ? 'white' : 'black',
     transition: 'color 0.3s ease-in-out',
-    marginRight: hoveredButton === id ? '10px' : '0', // Add spacing for the text only when hovered
+    marginRight: hoveredButton === id ? '10px' : '0',
   });
 
   const getTextStyle = (id) => ({
-    opacity: hoveredButton === id ? 1 : 0, // Show text only when hovered
+    opacity: hoveredButton === id ? 1 : 0,
     transition: 'opacity 0.3s ease-in-out',
-    color: 'black',
+    color: 'white',
   });
 
   return (

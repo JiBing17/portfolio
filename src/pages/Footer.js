@@ -17,7 +17,7 @@ const Footer = () => {
           textAlign: 'center',
           fontSize: '2.5rem',
           fontWeight: 'bold',
-          marginBottom: '0.5rem',
+          
           color: "rgb(69, 80, 91)"
         }}
       >
@@ -27,7 +27,7 @@ const Footer = () => {
         sx={{
           textAlign: 'center',
           fontStyle: 'italic',
-          marginBottom: '1.5rem',
+          marginBottom: '.5rem',
           color: "rgb(69, 80, 91)"
 
         }}
@@ -40,8 +40,8 @@ const Footer = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          gap: '1.5rem',
-          marginBottom: '1.5rem',
+          gap: '.5rem',
+          marginBottom: '.5rem',
         }}
       >
         <Link
@@ -51,8 +51,8 @@ const Footer = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '50px',
-            height: '50px',
+            width: '40px',
+            height: '40px',
             borderRadius: '50%',
             backgroundColor: '#000',
             color: '#fff',
@@ -64,7 +64,7 @@ const Footer = () => {
             },
           }}
         >
-          <GitHubIcon fontSize="large" />
+          <GitHubIcon fontSize="medium" />
         </Link>
 
         <Link
@@ -74,8 +74,8 @@ const Footer = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '50px',
-            height: '50px',
+            width: '40px',
+            height: '40px',
             borderRadius: '50%',
             backgroundColor: '#0077b5',
             color: '#fff',
@@ -87,18 +87,18 @@ const Footer = () => {
             },
           }}
         >
-          <LinkedInIcon fontSize="large" />
+          <LinkedInIcon fontSize="medium" />
         </Link>
 
         <Link
-          href="https://www.instagram.com/yourprofile"
+          href="https://www.instagram.com/calmly4u/"
           target="_blank"
           sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '50px',
-            height: '50px',
+            width: '40px',
+            height: '40px',
             borderRadius: '50%',
             backgroundColor: '#E1306C',
             color: '#fff',
@@ -110,7 +110,7 @@ const Footer = () => {
             },
           }}
         >
-          <InstagramIcon fontSize="large" />
+          <InstagramIcon fontSize="medium" />
         </Link>
       </Box>
 
@@ -121,7 +121,7 @@ const Footer = () => {
           flexDirection: 'column',
           alignItems: 'center',
           position: 'relative',
-          mt: '2rem',
+          mt: '1rem',
         }}
       >
         <Typography sx={{color: "rgb(69, 80, 91)"}}>
@@ -130,7 +130,7 @@ const Footer = () => {
         <Typography
           sx={{
             position: 'absolute',
-            right: 0,
+            right: "5%",
             fontStyle: 'italic',
             color: "rgb(69, 80, 91)"
         }}

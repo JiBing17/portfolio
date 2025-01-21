@@ -1,154 +1,277 @@
-import React from 'react';
-import { Box, Typography, LinearProgress } from '@mui/material';
+import React, { useRef, useState, useEffect } from 'react';
+import { Box, Typography } from '@mui/material';
 
 const Skills = () => {
+  const skillsRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const skills = [
+    { name: 'Python', icon: 'devicon-python-plain', color: '#3776AB' },
+    { name: 'C++', icon: 'devicon-cplusplus-plain', color: '#00599C' },
+    { name: 'Java', icon: 'devicon-java-plain', color: '#007396' },
+    { name: 'HTML', icon: 'devicon-html5-plain', color: '#E44D26' },
+    { name: 'CSS', icon: 'devicon-css3-plain', color: '#1572B6' },
+    { name: 'JavaScript', icon: 'devicon-javascript-plain', color: '#F7DF1E' },
+    { name: 'React', icon: 'devicon-react-original', color: '#61DAFB' },
+    { name: 'Node.js', icon: 'devicon-nodejs-plain', color: '#339933' },
+    { name: 'Express.js', icon: 'devicon-express-original', color: '#000000' },
+    { name: 'Flask', icon: 'devicon-flask-original', color: '#000000' },
+    { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain', color: '#38B2AC' },
+    { name: 'Material-UI', icon: 'devicon-materialui-plain', color: '#007FFF' },
+    { name: 'Git', icon: 'devicon-git-plain', color: '#F05032' },
+    { name: 'MongoDB', icon: 'devicon-mongodb-plain', color: '#47A248' },
+    { name: 'SQLite', icon: 'devicon-sqlite-plain', color: '#003B57' },
+    { name: 'Linux', icon: 'devicon-linux-plain', color: '#FCC624' },
+  ]
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target); // Stop observing after animation
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the section is visible
+      }
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => {
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
+    };
+  }, []);
+
+  // Bar values for each skill
+  const barValues = visible
+    ? {
+        python: 90,
+        c: 80,
+        sql: 75,
+        java: 80,
+        javascript: 90,
+        htmlcss: 95,
+      }
+    : {
+        python: 0,
+        c: 0,
+        sql: 0,
+        java: 0,
+        javascript: 0,
+        htmlcss: 0,
+      };
+
   return (
-    <>
-      <Box sx={{ padding: '1rem', backgroundColor: "#f5f5f5"}} id="skills">
-        <Typography
-          sx={{
-            textAlign: 'center',
-            fontSize: '2.5rem',
-            fontWeight: 'bold',
-            borderBottom: '2px solid #ff00ff',
-            width: '10%',
-            margin: '.5rem auto',
-          }}
-        >
-          Skills
-        </Typography>
-        <Typography sx={{ textAlign: 'center', marginBottom: '1rem' }}>
-          Programming Languages and Developer Tools
-        </Typography>
+    <Box
+      id="skills"
+      ref={skillsRef}
+      sx={{
+        padding: '2rem',
+        backgroundColor: 'gray',
+        // Apply fade-in animation
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'opacity 1.5s ease-out, transform 1s ease-out',
+      }}
+    >
+      <Typography
+        sx={{
+          textAlign: 'center',
+          fontSize: '2.5rem',
+          fontWeight: 'bold',
+          borderBottom: '2px solid #f76e65',
+          width: '10%',
+          margin: '.5rem auto',
+        }}
+      >
+        Skills
+      </Typography>
+      <Typography sx={{ textAlign: 'center', marginBottom: '1rem' }}>
+        Programming Languages and Developer Tools
+      </Typography>
 
-        {/* Progress Bars Section */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            width: '100%',
-          }}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%',
-              gap: '3rem',
-            }}
-          >
-            {/* Left Column */}
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '40%' }}>
-              <Box sx={{ width: '100%' }}>
-                <Typography sx={{ marginBottom: '0.5rem' }}>Python</Typography>
-                <LinearProgress variant="determinate" value={90} sx={{ height: '10px', borderRadius: '5px', marginBottom: '1rem' }} />
-
-                <Typography sx={{ marginBottom: '0.5rem' }}>C/C++</Typography>
-                <LinearProgress variant="determinate" value={80} sx={{ height: '10px', borderRadius: '5px', marginBottom: '1rem' }} />
-
-                <Typography sx={{ marginBottom: '0.5rem' }}>SQL</Typography>
-                <LinearProgress variant="determinate" value={75} sx={{ height: '10px', borderRadius: '5px', marginBottom: '1rem' }} />
-              </Box>
-            </Box>
-
-            {/* Right Column */}
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '40%' }}>
-              <Box sx={{ width: '100%' }}>
-                <Typography sx={{ marginBottom: '0.5rem' }}>Java</Typography>
-                <LinearProgress variant="determinate" value={80} sx={{ height: '10px', borderRadius: '5px', marginBottom: '1rem' }} />
-
-                <Typography sx={{ marginBottom: '0.5rem' }}>JavaScript</Typography>
-                <LinearProgress variant="determinate" value={90} sx={{ height: '10px', borderRadius: '5px', marginBottom: '1rem' }} />
-
-                <Typography sx={{ marginBottom: '0.5rem' }}>HTML/CSS</Typography>
-                <LinearProgress variant="determinate" value={95} sx={{ height: '10px', borderRadius: '5px', marginBottom: '1rem' }} />
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-
-        {/* Icons Section */}
+      {/* Progress Bars Section */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          width: '100%',
+        }}
+      >
         <Box
           sx={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '2rem',
-            margin: "2rem auto 0 auto",
-            width: "50%"
-            
+            width: '100%',
+            gap: '3rem',
           }}
         >
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-python-plain" style={{ fontSize: '40px', color: '#3776AB' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Python</Typography>
+          {/* Left Column */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '40%' }}>
+            <Box sx={{ width: '100%' }}>
+              <Typography sx={{ marginBottom: '0.5rem' }}>Python</Typography>
+              <Box
+                sx={{
+                  position: 'relative',
+                  height: '10px',
+                  width: '100%',
+                  backgroundColor: '#e0e0e0',
+                  borderRadius: '5px',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '100%',
+                    width: `${barValues.python}%`,
+                    backgroundColor: '#f76e65',
+                    transition: 'width 1.3s ease-in-out',
+                  }}
+                ></Box>
+              </Box>
+
+              <Typography sx={{ marginBottom: '0.5rem' }}>C/C++</Typography>
+              <Box
+                sx={{
+                  position: 'relative',
+                  height: '10px',
+                  width: '100%',
+                  backgroundColor: '#e0e0e0',
+                  borderRadius: '5px',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '100%',
+                    width: `${barValues.c}%`,
+                    backgroundColor: '#f76e65',
+                    transition: 'width 1.3s ease-in-out',
+                  }}
+                ></Box>
+              </Box>
+
+              <Typography sx={{ marginBottom: '0.5rem' }}>SQL</Typography>
+              <Box
+                sx={{
+                  position: 'relative',
+                  height: '10px',
+                  width: '100%',
+                  backgroundColor: '#e0e0e0',
+                  borderRadius: '5px',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '100%',
+                    width: `${barValues.sql}%`,
+                    backgroundColor: '#f76e65',
+                    transition: 'width 1.3s ease-in-out',
+                  }}
+                ></Box>
+              </Box>
+            </Box>
           </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-cplusplus-plain" style={{ fontSize: '40px', color: '#00599C' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>C++</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-java-plain" style={{ fontSize: '40px', color: '#007396' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Java</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-html5-plain" style={{ fontSize: '40px', color: '#E44D26' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>HTML</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-css3-plain" style={{ fontSize: '40px', color: '#1572B6' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>CSS</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-javascript-plain" style={{ fontSize: '40px', color: '#F7DF1E' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>JavaScript</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-react-original" style={{ fontSize: '40px', color: '#61DAFB' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>React</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-nodejs-plain" style={{ fontSize: '40px', color: '#339933' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Node.js</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-express-original" style={{ fontSize: '40px', color: '#000000' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Express.js</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-flask-original" style={{ fontSize: '40px', color: '#000000' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Flask</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-tailwindcss-plain" style={{ fontSize: '40px', color: '#38B2AC' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Tailwind CSS</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-materialui-plain" style={{ fontSize: '40px', color: '#007FFF' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Material-UI</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-git-plain" style={{ fontSize: '40px', color: '#F05032' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Git</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-mongodb-plain" style={{ fontSize: '40px', color: '#47A248' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>MongoDB</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-sqlite-plain" style={{ fontSize: '40px', color: '#003B57' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>SQLite</Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center' }}>
-            <i className="devicon-linux-plain" style={{ fontSize: '40px', color: '#FCC624' }}></i>
-            <Typography sx={{ fontSize: ".8rem", fontWeight: "bold"}}>Linux</Typography>
+
+          {/* Right Column */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '40%' }}>
+            <Box sx={{ width: '100%' }}>
+              <Typography sx={{ marginBottom: '0.5rem' }}>Java</Typography>
+              <Box
+                sx={{
+                  position: 'relative',
+                  height: '10px',
+                  width: '100%',
+                  backgroundColor: '#e0e0e0',
+                  borderRadius: '5px',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '100%',
+                    width: `${barValues.java}%`,
+                    backgroundColor: '#f76e65',
+                    transition: 'width 1.3s ease-in-out',
+                  }}
+                ></Box>
+              </Box>
+
+              <Typography sx={{ marginBottom: '0.5rem' }}>JavaScript</Typography>
+              <Box
+                sx={{
+                  position: 'relative',
+                  height: '10px',
+                  width: '100%',
+                  backgroundColor: '#e0e0e0',
+                  borderRadius: '5px',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '100%',
+                    width: `${barValues.javascript}%`,
+                    backgroundColor: '#f76e65',
+                    transition: 'width 1.3s ease-in-out',
+                  }}
+                ></Box>
+              </Box>
+
+              <Typography sx={{ marginBottom: '0.5rem' }}>HTML/CSS</Typography>
+              <Box
+                sx={{
+                  position: 'relative',
+                  height: '10px',
+                  width: '100%',
+                  backgroundColor: '#e0e0e0',
+                  borderRadius: '5px',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '100%',
+                    width: `${barValues.htmlcss}%`,
+                    backgroundColor: '#f76e65',
+                    transition: 'width 1.3s ease-in-out',
+                  }}
+                ></Box>
+              </Box>
+            </Box>
           </Box>
         </Box>
       </Box>
-    </>
+
+      {/* Icons Section */}
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '1.5rem',
+          margin: '2rem auto 0 auto',
+          width: '100%',
+        }}
+      >
+        {skills.map((tech) => (
+          <Box key={tech.name} sx={{ textAlign: 'center'}}>
+            <i className={tech.icon} style={{ fontSize: '40px', color: tech.color }}></i>
+            <Typography sx={{ fontSize: '.8rem', fontWeight: 'bold' }}>{tech.name}</Typography>
+          </Box>
+        ))}
+      </Box>
+    </Box>
   );
 };
 

@@ -41,15 +41,18 @@ const BackToTop = () => {
     >
       <IconButton
         onClick={scrollToTop}
+        disableRipple // Removes ripple effect
         sx={{
           width: '40px',
           height: '40px',
           borderRadius: '50%',
-          backgroundColor: '#ff00ff',
+          backgroundColor: '#f76e65',
           color: '#fff',
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)',
+          transition: 'background-color 0.3s ease, transform 0.2s ease',
           '&:hover': {
-            backgroundColor: '#e000e0',
+            backgroundColor: '#ff8578', // Brighter hover color
+            transform: 'scale(1.1)', // Slight scaling effect
           },
         }}
       >

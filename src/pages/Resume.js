@@ -1,15 +1,51 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 
 const Resume = () => {
+
+  const resumeRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target); 
+          }
+        });
+      },
+      { threshold: 0.1 } 
+    );
+
+    if (resumeRef.current) {
+      observer.observe(resumeRef.current);
+    }
+
+    return () => {
+      if (resumeRef.current) {
+        observer.unobserve(resumeRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <Box sx={{ padding: '1rem', backgroundColor: '#f5f5f5' }} id="resume">
+    <Box 
+      sx={{ 
+        padding: '1rem', backgroundColor: '#f5f5f5', opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(30px)',
+        transition: 'opacity 1.3s ease-out, transform 1s ease-out',
+      }} 
+      id="resume" 
+      ref={resumeRef} 
+       >
       <Typography
         sx={{
           textAlign: 'center',
           fontSize: '2.5rem',
           fontWeight: 'bold',
-          borderBottom: '2px solid #ff00ff',
+          borderBottom: '2px solid #f76e65',
           width: '10%',
           margin: '.5rem auto',
         }}
@@ -20,7 +56,7 @@ const Resume = () => {
       <Grid
         container
         spacing={2}
-        mt={4}
+        
         
         sx={{
           justifyContent: 'center',
@@ -38,16 +74,18 @@ const Resume = () => {
             flexDirection: 'column',
             justifyContent: 'flex-start',
             alignItems: 'center', 
+            
+
           }}
         >
           <Typography
             sx={{
               fontSize: '1.5rem',
               fontWeight: 'bold',
-              marginBottom: '1rem',
+              marginRight: '18rem'
             }}
           >
-            Education 🎓
+            🎓 Education 
           </Typography>
           <Box display="flex" mt={2}>
             <Box
@@ -55,16 +93,17 @@ const Resume = () => {
               flexDirection="column"
               alignItems="center"
               position="relative"
+              
             >
               <Box
                 width="16px"
                 height="16px"
-                border="2px solid #ff80ed"
+                border="2px solid #f76e65"
                 borderRadius="50%"
                 zIndex={10}
                 bgcolor="white"
               />
-              <Box width="2px" bgcolor="#ff80ed" flexGrow={1} />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
             <Box ml={2}>
               <Typography
@@ -73,7 +112,7 @@ const Resume = () => {
                 sx={{
                   fontSize: '1.1rem',
                   fontWeight: 'bold',
-                  color: '#ff80ed',
+                  color: '#f76e65',
                 }}
               >
                 Bachelor of Science in Computer Science
@@ -99,7 +138,7 @@ const Resume = () => {
 
                 }}
               >
-                <Typography component="li">CS 18000 - Problem Solving and Object-Oriented Programming</Typography>
+                <Typography component="li">CS 18000 - Object-Oriented Programming</Typography>
                 <Typography component="li">CS 19300 - Developer Tools</Typography>
                 <Typography component="li">CS 18200 - Discrete Mathematics</Typography>
                 <Typography component="li">CS 21100 - Competitive Programming I</Typography>
@@ -126,7 +165,7 @@ const Resume = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
-            alignItems: 'center', 
+            alignItems: 'start', 
           }}
         >
           <Typography
@@ -136,9 +175,9 @@ const Resume = () => {
               marginBottom: '1rem',
             }}
           >
-            Professional Experience 💻
+            💻 Professional Experience 
           </Typography>
-          <Box display="flex" mt={2}>
+          <Box display="flex">
             <Box
               display="flex"
               flexDirection="column"
@@ -148,21 +187,21 @@ const Resume = () => {
               <Box
                 width="16px"
                 height="16px"
-                border="2px solid #ff80ed"
+                border="2px solid #f76e65"
                 borderRadius="50%"
                 zIndex={10}
                 bgcolor="white"
               />
-              <Box width="2px" bgcolor="#ff80ed" flexGrow={1} />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box ml={2}>
+            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
               <Typography
                 variant="h4"
                 component="h4"
                 sx={{
                   fontSize: '1.1rem',
                   fontWeight: 'bold',
-                  color: '#ff80ed',
+                  color: '#f76e65',
                 }}
               >
                 Undergraduate Data Science Researcher
@@ -197,7 +236,7 @@ const Resume = () => {
               </Box>
             </Box>
           </Box>
-          <Box display="flex" mt={2}>
+          <Box display="flex">
             <Box
               display="flex"
               flexDirection="column"
@@ -207,21 +246,21 @@ const Resume = () => {
               <Box
                 width="16px"
                 height="16px"
-                border="2px solid #ff80ed"
+                border="2px solid #f76e65"
                 borderRadius="50%"
                 zIndex={10}
                 bgcolor="white"
               />
-              <Box width="2px" bgcolor="#ff80ed" flexGrow={1} />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box ml={2}>
+            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
               <Typography
                 variant="h4"
                 component="h4"
                 sx={{
                   fontSize: '1.1rem',
                   fontWeight: 'bold',
-                  color: '#ff80ed',
+                  color: '#f76e65',
                 }}
               >
                  AI & GameDevelopment Research Assistant
@@ -253,7 +292,7 @@ const Resume = () => {
               </Box>
             </Box>
           </Box>
-          <Box display="flex" mt={2}>
+          <Box display="flex" >
             <Box
               display="flex"
               flexDirection="column"
@@ -263,21 +302,21 @@ const Resume = () => {
               <Box
                 width="16px"
                 height="16px"
-                border="2px solid #ff80ed"
+                border="2px solid #f76e65"
                 borderRadius="50%"
                 zIndex={10}
                 bgcolor="white"
               />
-              <Box width="2px" bgcolor="#ff80ed" flexGrow={1} />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box ml={2}>
+            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
               <Typography
                 variant="h4"
                 component="h4"
                 sx={{
                   fontSize: '1.1rem',
                   fontWeight: 'bold',
-                  color: '#ff80ed',
+                  color: '#f76e65',
                 }}
               >
                 Undergraduate Teaching Assistant - Undergraduate Student Board
@@ -310,7 +349,7 @@ const Resume = () => {
               </Box>
             </Box>
           </Box>
-          <Box display="flex" mt={2}>
+          <Box display="flex" >
             <Box
               display="flex"
               flexDirection="column"
@@ -320,21 +359,21 @@ const Resume = () => {
               <Box
                 width="16px"
                 height="16px"
-                border="2px solid #ff80ed"
+                border="2px solid #f76e65"
                 borderRadius="50%"
                 zIndex={10}
                 bgcolor="white"
               />
-              <Box width="2px" bgcolor="#ff80ed" flexGrow={1} />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box ml={2}>
+            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
               <Typography
                 variant="h4"
                 component="h4"
                 sx={{
                   fontSize: '1.1rem',
                   fontWeight: 'bold',
-                  color: '#ff80ed',
+                  color: '#f76e65',
                 }}
               >
                 Undergraduate Teaching Assistant - Tools
@@ -369,7 +408,7 @@ const Resume = () => {
               </Box>
             </Box>
           </Box>
-          <Box display="flex" mt={2}>
+          <Box display="flex" >
             <Box
               display="flex"
               flexDirection="column"
@@ -379,21 +418,21 @@ const Resume = () => {
               <Box
                 width="16px"
                 height="16px"
-                border="2px solid #ff80ed"
+                border="2px solid #f76e65"
                 borderRadius="50%"
                 zIndex={10}
                 bgcolor="white"
               />
-              <Box width="2px" bgcolor="#ff80ed" flexGrow={1} />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box ml={2}>
+            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
               <Typography
                 variant="h4 "
                 component="h4"
                 sx={{
                   fontSize: '1.1rem',
                   fontWeight: 'bold',
-                  color: '#ff80ed',
+                  color: '#f76e65',
                 }}
               >
                 Software Development Research Assistant
