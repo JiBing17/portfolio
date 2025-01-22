@@ -55,11 +55,11 @@ const Projects = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setVisible(true);
-            observer.unobserve(entry.target); // Stop observing after animation
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 } // Trigger when 10% of the section is visible
+      { threshold: 0.1 }
     );
 
     if (projectsRef.current) {
@@ -88,59 +88,79 @@ const Projects = () => {
       id="projects"
       ref={projectsRef}
       sx={{
-        padding: '1rem',
+        // Responsive padding
+        px: { xs: '1rem', sm: '2rem', md: '4rem' },
+        py: { xs: '2rem', md: '4rem' },
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
         transition: 'opacity 1.5s ease-out, transform 1s ease-out',
         backgroundColor: '#1a3d47',
-
       }}
     >
       <Typography
         sx={{
           textAlign: 'center',
-          fontSize: '2.5rem',
+          // Responsive font sizes for heading
+          fontSize: { xs: '2rem', md: '2.5rem' },
           fontWeight: 'bold',
-          position: 'relative', // For positioning the pseudo-element
-          width: '10%',
+          position: 'relative',
+          width: 'fit-content',
           margin: '.5rem auto',
           color: 'white',
           '&::after': {
             content: '""',
             position: 'absolute',
-            bottom: '-2px', // Align below text
+            bottom: '-2px',
             left: 0,
             width: '100%',
-            height: '2px', // Border thickness
+            height: '2px',
             background: `linear-gradient(
               to right,
-              white 0%,          /* White starts */
-              white 35%,         /* White until 35% */
-              #ff8578 35%,       /* Coral starts at 35% */
-              #ff8578 65%,       /* Coral ends at 65% */
-              white 65%          /* White resumes after 65% */
-            )`, // Gradient creates the coral center with visible white edges
-            zIndex: 1, // Keeps this layer above the main line
+              white 0%,
+              white 35%,
+              #ff8578 35%,
+              #ff8578 65%,
+              white 65%
+            )`,
+            zIndex: 1,
           },
           '&::before': {
             content: '""',
             position: 'absolute',
-            bottom: '-2px', // Same alignment
+            bottom: '-2px',
             left: 0,
             width: '100%',
             height: '2px',
-            backgroundColor: 'white', // Full white border underneath
-            zIndex: 0, // Keeps this layer below the gradient
+            backgroundColor: 'white',
+            zIndex: 0,
           },
         }}
       >
         Projects
       </Typography>
 
+      <Typography
+        sx={{
+          textAlign: 'center',
+          marginBottom: '1rem',
+          color: 'white',
+          fontSize: { xs: '1rem', md: '1.1rem' },
+        }}
+      >
+        A collection of my work!
+      </Typography>
 
-      <Typography sx={{ textAlign: 'center', marginBottom: '1rem', color: "white" }}>A collection of my work!</Typography>
-
-      <Grid container spacing={4} sx={{ marginTop: '2rem', width: '90%', margin: '0 auto' }}>
+      {/* Cards Grid */}
+      <Grid
+        container
+        spacing={4}
+        sx={{
+          marginTop: '2rem',
+          // Responsive width
+          width: { xs: '95%', md: '90%' },
+          margin: '0 auto',
+        }}
+      >
         {projects.map((project, index) => (
           <Grid
             item
@@ -157,9 +177,10 @@ const Projects = () => {
             <Card
               sx={{
                 position: 'relative',
+                overflow: 'hidden',
+                // Hover overlay & zoom effect
                 '&:hover .overlay': { opacity: 1 },
                 '&:hover .image': { transform: 'scale(1.1)' },
-                overflow: 'hidden',
               }}
             >
               {/* Project Image */}
@@ -169,14 +190,15 @@ const Projects = () => {
                 alt={project.title}
                 sx={{
                   transition: 'transform 0.3s ease',
-                  height: 220,
+                  // Responsive height
+                  height: { xs: 180, md: 220 },
                   width: '100%',
                   objectFit: 'contain',
                   className: 'image',
                 }}
               />
 
-              {/* Overlay on Hover */}
+              {/* Hover Overlay */}
               <Box
                 className="overlay"
                 sx={{
@@ -218,6 +240,7 @@ const Projects = () => {
                     color="white"
                     href={project.github}
                     target="_blank"
+                    sx={{ ml: 1 }}
                   >
                     GitHub
                   </Button>
@@ -235,10 +258,9 @@ const Projects = () => {
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: '#1a3d47', // Theme background color
-              color: 'white', // White text for contrast
+              backgroundColor: '#1a3d47',
+              color: 'white',
               padding: 0,
             }}
           >
@@ -260,7 +282,7 @@ const Projects = () => {
               <CloseIcon />
             </IconButton>
 
-            {/* Project Image */}
+            {/* Project Image (Dialog) */}
             <Box
               sx={{
                 backgroundImage: `url(${selectedProject.picture})`,
@@ -268,19 +290,21 @@ const Projects = () => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 width: '100%',
-                height: '70vh',
+                // Responsive height in dialog
+                height: { xs: '40vh', md: '70vh' },
               }}
             />
 
             {/* Project Description */}
             <Box
               sx={{
-                padding: '1rem',
-                textAlign: 'center',
                 width: '100%',
-                backgroundColor: '#ffffff', 
-                borderRadius: '8px',
-                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+                backgroundColor: '#ffffff',
+                color: '#1a3d47',
+                borderRadius: '8px 8px 0 0',
+                boxShadow: '0 -4px 10px rgba(0, 0, 0, 0.3)',
+                p: { xs: '1rem', md: '2rem' },
+                textAlign: 'center',
               }}
             >
               <Typography
@@ -288,26 +312,14 @@ const Projects = () => {
                 sx={{
                   marginBottom: '1rem',
                   fontWeight: 'bold',
-                  color: '#1a3d47',
                 }}
               >
                 {selectedProject.title}
               </Typography>
-              <Typography
-                sx={{
-                  marginBottom: '1rem',
-                  color: '#1a3d47',
-                }}
-              >
+              <Typography sx={{ marginBottom: '1rem' }}>
                 {selectedProject.description}
               </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  fontWeight: 'bold',
-                  color: '#1a3d47',
-                }}
-              >
+              <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                 Tools: {selectedProject.tools.join(', ')}
               </Typography>
 
@@ -331,7 +343,6 @@ const Projects = () => {
           </DialogContent>
         )}
       </Dialog>
-
     </Box>
   );
 };

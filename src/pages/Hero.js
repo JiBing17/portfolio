@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Link, Stack } from '@mui/material';
 import { TypeAnimation } from 'react-type-animation';
-import bgPic from '../icons/hero_background.png';
+import bgPic from '../icons/hero.png';
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
       sx={{
         position: 'relative',
         width: '100%',
-        height: '100vh',
+        height: '100vh', // Keep a full viewport height
         overflowX: 'hidden',
         backgroundImage: `url(${bgPic})`,
         backgroundSize: 'cover',
@@ -23,23 +23,24 @@ const Hero = () => {
           position: 'absolute',
           width: '100%',
           height: '100%',
-          background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3))`, // Semi-transparent gradient overlay
-          zIndex: 1, // Ensures the overlay is above the background image
+          background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))`,
+          zIndex: 1,
         }}
-      ></Box>
+      />
 
       {/* Container for nav links and hero text */}
       <Box
         sx={{
-          position: 'relative', // Ensure this is above the overlay
+          position: 'relative',
           zIndex: 2,
-          display: 'flex',
+          // Fixed position for all breakpoints
           top: '30%',
           left: '10%',
-          padding: '1rem',
+          p: '2rem',
+          width: '100%',
+          display: 'flex',
           alignItems: 'center',
           justifyContent: 'start',
-          width: '100%',
           '@keyframes popIn': {
             '0%': {
               transform: 'translate(60px, 40px) scale(0.4)',
@@ -54,28 +55,40 @@ const Hero = () => {
         }}
       >
         {/* Hero Text */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'start',
-            justifyContent: 'center',
-          }}
-        >
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
           <Typography
             sx={{
               color: 'white',
-              fontSize: '5rem',
               fontWeight: 'bold',
+              // Responsive font sizes
+              fontSize: { xs: '2rem', sm: '3rem', md: '5rem' },
+              lineHeight: { xs: '2.5rem', sm: '3.5rem', md: '5.5rem' },
             }}
           >
             Ji Bing Ni
           </Typography>
 
-          <Typography sx={{ color: 'white', fontSize: '2rem' }}>
+          <Typography
+            sx={{
+              color: 'white',
+              fontSize: { xs: '1rem', sm: '1.5rem', md: '2rem' },
+              mt: { xs: '0.5rem', md: '1rem' },
+            }}
+          >
             I&apos;m a{' '}
             <TypeAnimation
-              sequence={['CS major @ Purdue ', 1000, 'Developer', 1000, 'Learner', 1000, 'Designer', 1000, 'Innovator', 1000]}
+              sequence={[
+                'CS major @ Purdue ',
+                1000,
+                'Developer',
+                1000,
+                'Learner',
+                1000,
+                'Designer',
+                1000,
+                'Innovator',
+                1000,
+              ]}
               speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
               style={{ display: 'inline-block', color: '#f76e65' }}
               repeat={Infinity}
@@ -83,30 +96,45 @@ const Hero = () => {
           </Typography>
 
           {/* Social Icons */}
-          <Stack direction="row" spacing={2} sx={{ marginTop: '1rem' }}>
+          <Stack direction="row" spacing={3} sx={{ mt: { xs: '1rem', md: '2rem' } }}>
             <Link
               href="https://github.com/JiBing17"
-              underline="hover"
+              underline="none"
               target="_blank"
               rel="noopener noreferrer"
+              sx={{
+                color: 'white',
+                fontSize: { xs: '1.5rem', md: '2rem' },
+                '&:hover': { color: '#f76e65' },
+              }}
             >
-              <i className="fab fa-github text-white text-2xl" />
+              <i className="fab fa-github" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/jibing-ni/"
-              underline="hover"
+              underline="none"
               target="_blank"
               rel="noopener noreferrer"
+              sx={{
+                color: 'white',
+                fontSize: { xs: '1.5rem', md: '2rem' },
+                '&:hover': { color: '#f76e65' },
+              }}
             >
-              <i className="fab fa-linkedin text-white text-2xl" />
+              <i className="fab fa-linkedin" />
             </Link>
             <Link
               href="https://www.instagram.com/calmly4u/"
-              underline="hover"
+              underline="none"
               target="_blank"
               rel="noopener noreferrer"
+              sx={{
+                color: 'white',
+                fontSize: { xs: '1.5rem', md: '2rem' },
+                '&:hover': { color: '#f76e65' },
+              }}
             >
-              <i className="fab fa-instagram text-white text-2xl" />
+              <i className="fab fa-instagram" />
             </Link>
           </Stack>
         </Box>

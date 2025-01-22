@@ -8,18 +8,20 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        padding: '1rem',
+        // Responsive padding
+        px: { xs: '1rem', md: '2rem' },
+        py: { xs: '1rem', md: '2rem' },
         backgroundColor: '#1a3d47',
-
       }}
     >
       {/* Top Section */}
       <Typography
         sx={{
           textAlign: 'center',
-          fontSize: '2.5rem',
+          // Responsive font size
+          fontSize: { xs: '2rem', md: '2.5rem' },
           fontWeight: 'bold',
-          color: "white"
+          color: 'white',
         }}
       >
         Ji Bing Ni
@@ -28,9 +30,10 @@ const Footer = () => {
         sx={{
           textAlign: 'center',
           fontStyle: 'italic',
-          marginBottom: '.5rem',
-          color: "white"
-
+          mb: { xs: '.5rem', md: '1rem' },
+          color: 'white',
+          // Slightly smaller text on mobile
+          fontSize: { xs: '0.95rem', md: '1rem' },
         }}
       >
         Software Engineering @ Purdue CS
@@ -42,7 +45,7 @@ const Footer = () => {
           display: 'flex',
           justifyContent: 'center',
           gap: '.5rem',
-          marginBottom: '.5rem',
+          mb: '.5rem',
         }}
       >
         <Link
@@ -118,23 +121,30 @@ const Footer = () => {
       {/* Bottom Section */}
       <Box
         sx={{
+          // Stack on mobile, row alignment on larger screens
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
+          justifyContent: 'center',
           position: 'relative',
-          mt: '1rem',
+          mt: { xs: '1rem', md: '2rem' },
         }}
       >
-        <Typography sx={{ color: "white"}}>
-          © <strong >Ji Bing 2025.</strong> All Rights Reserved.
+        <Typography sx={{ color: 'white' }}>
+          © <strong>Ji Bing 2025.</strong> All Rights Reserved.
         </Typography>
         <Typography
           sx={{
-            position: 'absolute',
-            right: "5%",
+            // On smaller screens, place this below
+            // On larger screens, align right
+            mt: { xs: '0.5rem', md: 0 },
+            ml: { xs: 0, md: 'auto' },
+            position: { xs: 'static', md: 'absolute' },
+            right: { md: '5%' },
             fontStyle: 'italic',
-            color: "white"
-        }}
+            color: 'white',
+            fontSize: { xs: '0.85rem', md: '1rem' },
+          }}
         >
           Last Updated: January 2025
         </Typography>

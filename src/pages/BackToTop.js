@@ -31,32 +31,39 @@ const BackToTop = () => {
     <Box
       sx={{
         position: 'fixed',
-        bottom: '1rem',
-        right: '1rem',
+        // Responsive positioning (slightly larger offset on bigger screens)
+        bottom: { xs: '1rem', md: '2rem' },
+        right: { xs: '1rem', md: '2rem' },
         zIndex: 1000,
-        opacity: showButton ? 1 : 0, // Fade in/out effect
-        visibility: showButton ? 'visible' : 'hidden', // Ensures it is hidden when not visible
-        transition: 'opacity 0.5s ease, visibility 0.5s ease', // Smooth fade transition
+        opacity: showButton ? 1 : 0,
+        visibility: showButton ? 'visible' : 'hidden',
+        transition: 'opacity 0.5s ease, visibility 0.5s ease',
       }}
     >
       <IconButton
         onClick={scrollToTop}
-        disableRipple // Removes ripple effect
+        disableRipple
         sx={{
-          width: '40px',
-          height: '40px',
+          // Responsive button sizing
+          width: { xs: '40px', md: '48px' },
+          height: { xs: '40px', md: '48px' },
           borderRadius: '50%',
           backgroundColor: '#f76e65',
           color: '#fff',
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)',
           transition: 'background-color 0.3s ease, transform 0.2s ease',
           '&:hover': {
-            backgroundColor: '#ff8578', // Brighter hover color
-            transform: 'scale(1.1)', // Slight scaling effect
+            backgroundColor: '#ff8578',
+            transform: 'scale(1.1)',
           },
         }}
       >
-        <ArrowUpwardIcon fontSize="medium" />
+        <ArrowUpwardIcon
+          // Make icon size responsive too
+          sx={{
+            fontSize: { xs: '1.25rem', md: '1.5rem' },
+          }}
+        />
       </IconButton>
     </Box>
   );

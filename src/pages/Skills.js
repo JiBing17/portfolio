@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react'; 
 import { Box, Typography } from '@mui/material';
 
 const Skills = () => {
@@ -71,11 +71,13 @@ const Skills = () => {
   const renderBarRow = (label, value) => (
     <Box sx={{ marginBottom: '1.5rem' }}>
       {/* Row with label (left) and percentage (right) */}
-      <Box sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        marginBottom: '0.5rem',
-      }}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginBottom: '0.5rem',
+        }}
+      >
         <Typography sx={{ fontWeight: 'bold', color: '#1a3d47' }}>
           {label}
         </Typography>
@@ -112,9 +114,10 @@ const Skills = () => {
       id="skills"
       ref={skillsRef}
       sx={{
-        padding: '2rem',
+        px: { xs: '1rem', sm: '2rem', md: '4rem' }, // Responsive horizontal padding
+        py: { xs: '2rem', md: '4rem' },             // Responsive vertical padding
         backgroundColor: '#ffffff',
-        // fade-in animation
+        // Fade-in animation
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
         transition: 'opacity 1.5s ease-out, transform 1s ease-out',
@@ -126,7 +129,7 @@ const Skills = () => {
           fontSize: '2.5rem',
           fontWeight: 'bold',
           position: 'relative',
-          width: '10%',
+          width: 'fit-content',
           margin: '.5rem auto',
           color: '#1a3d47',
           '&::after': {
@@ -138,9 +141,9 @@ const Skills = () => {
             height: '2px',
             background: `linear-gradient(
               to right,
-              #cccccc 20%, 
-              #f76e65 20%, 
-              #f76e65 40%, 
+              #cccccc 20%,
+              #f76e65 20%,
+              #f76e65 40%,
               #cccccc 40%
             )`,
           },
@@ -149,7 +152,12 @@ const Skills = () => {
         Skills
       </Typography>
       <Typography
-        sx={{ textAlign: 'center', marginBottom: '1rem', color: '#1a3d47' }}
+        sx={{
+          textAlign: 'center',
+          marginBottom: '2rem',
+          color: '#1a3d47',
+          fontSize: { xs: '1rem', md: '1.1rem' },
+        }}
       >
         Programming Languages and Developer Tools
       </Typography>
@@ -158,33 +166,38 @@ const Skills = () => {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'column',
+          // On smaller devices, stack columns vertically
+          flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
+          justifyContent: 'center',
           width: '100%',
+          gap: '3rem',
         }}
       >
+        {/* Left Column */}
         <Box
           sx={{
+            width: { xs: '90%', md: '40%' },
             display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'flex-start',
-            width: '100%',
-            gap: '3rem',
+            flexDirection: 'column',
           }}
         >
-          {/* Left Column */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', width: '40%' }}>
-            {renderBarRow('Python', barValues.python)}
-            {renderBarRow('C/C++', barValues.c)}
-            {renderBarRow('SQL', barValues.sql)}
-          </Box>
+          {renderBarRow('Python', barValues.python)}
+          {renderBarRow('C/C++', barValues.c)}
+          {renderBarRow('SQL', barValues.sql)}
+        </Box>
 
-          {/* Right Column */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', width: '40%' }}>
-            {renderBarRow('Java', barValues.java)}
-            {renderBarRow('JavaScript', barValues.javascript)}
-            {renderBarRow('HTML/CSS', barValues.htmlcss)}
-          </Box>
+        {/* Right Column */}
+        <Box
+          sx={{
+            width: { xs: '90%', md: '40%' },
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          {renderBarRow('Java', barValues.java)}
+          {renderBarRow('JavaScript', barValues.javascript)}
+          {renderBarRow('HTML/CSS', barValues.htmlcss)}
         </Box>
       </Box>
 
@@ -204,9 +217,19 @@ const Skills = () => {
           <Box key={tech.name} sx={{ textAlign: 'center' }}>
             <i
               className={tech.icon}
-              style={{ fontSize: '40px', color: tech.color }}
+              style={{
+                fontSize: '40px',
+                color: tech.color,
+              }}
             />
-            <Typography sx={{ fontSize: '.8rem', fontWeight: 'bold', color: '#1a3d47' }}>
+            <Typography
+              sx={{
+                fontSize: '.8rem',
+                fontWeight: 'bold',
+                color: '#1a3d47',
+                mt: '0.25rem',
+              }}
+            >
               {tech.name}
             </Typography>
           </Box>

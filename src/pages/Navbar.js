@@ -53,7 +53,7 @@ const Navbar = () => {
     alignItems: 'center',
     justifyContent: 'start',
     transition: 'all 0.3s ease-in-out',
-    transform: hoveredButton === id ? 'scale(1.1)' : 'scale(1)', // Add scaling effect
+    transform: hoveredButton === id ? 'scale(1.1)' : 'scale(1)',
     width: hoveredButton === id ? '120px' : '50px',
     height: '50px',
     overflow: 'hidden',
@@ -77,8 +77,8 @@ const Navbar = () => {
     <Box
       sx={{
         position: 'fixed',
-        top: '30%',
-        left: '1%',
+        top: { xs: '20%', md: '30%' },
+        left: { xs: '2%', md: '1%' },
         zIndex: '100',
         display: 'flex',
         flexDirection: 'column',

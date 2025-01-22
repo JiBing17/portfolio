@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 
 const Resume = () => {
-
   const resumeRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -12,11 +11,11 @@ const Resume = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setVisible(true);
-            observer.unobserve(entry.target); 
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 } 
+      { threshold: 0.1 }
     );
 
     if (resumeRef.current) {
@@ -31,69 +30,71 @@ const Resume = () => {
   }, []);
 
   return (
-    <Box 
-      sx={{ 
-        padding: '1rem', backgroundColor: 'white', opacity: visible ? 1 : 0,
+    <Box
+      id="resume"
+      ref={resumeRef}
+      sx={{
+        // Responsive padding
+        px: { xs: '1rem', sm: '2rem', md: '4rem' },
+        py: { xs: '2rem', md: '4rem' },
+        backgroundColor: '#ffffff',
+        opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(30px)',
         transition: 'opacity 1.3s ease-out, transform 1s ease-out',
-      }} 
-      id="resume" 
-      ref={resumeRef} 
-       >
-        <Typography
-  sx={{
-    textAlign: 'center',
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    position: 'relative', // Required for pseudo-elements
-    width: '10%',
-    margin: '.5rem auto',
-    color: '#1a3d47',
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      bottom: '-2px', // Align below the text
-      left: 0,
-      width: '100%',
-      height: '2px', // Border thickness
-      background: `linear-gradient(
-        to right,
-        #cccccc 0%,       /* Gray for the start */
-        #cccccc 70%,      /* Gray until 70% */
-        #f76e65 70%,      /* Coral starts at 70% */
-        #f76e65 100%      /* Coral ends at 100% */
-      )`, // Coral fills the last 30%
-      zIndex: 1, // Overlay above the solid line
-    },
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      bottom: '-2px', // Aligns with `::after`
-      left: 0,
-      width: '100%',
-      height: '2px',
-      backgroundColor: '#cccccc', // Solid gray line underneath
-      zIndex: 0, // Keeps this below the gradient
-    },
-  }}
->
-  Resume
-</Typography>
-
-
+      }}
+    >
+      <Typography
+        sx={{
+          textAlign: 'center',
+          // Responsive font size for the main heading
+          fontSize: { xs: '2rem', md: '2.5rem' },
+          fontWeight: 'bold',
+          position: 'relative',
+          width: 'fit-content',
+          margin: '.5rem auto',
+          color: '#1a3d47',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            bottom: '-2px',
+            left: 0,
+            width: '100%',
+            height: '2px',
+            background: `linear-gradient(
+              to right,
+              #cccccc 0%,
+              #cccccc 70%,
+              #f76e65 70%,
+              #f76e65 100%
+            )`,
+            zIndex: 1,
+          },
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            bottom: '-2px',
+            left: 0,
+            width: '100%',
+            height: '2px',
+            backgroundColor: '#cccccc',
+            zIndex: 0,
+          },
+        }}
+      >
+        Resume
+      </Typography>
 
       <Grid
         container
         spacing={2}
-        
-        
         sx={{
+          mt: { xs: 2, md: 4 },
           justifyContent: 'center',
-          alignItems: 'flex-start', 
-          margin: "0 auto"
+          alignItems: 'flex-start',
+          margin: '0 auto',
         }}
       >
-        {/* Left Column */}
+        {/* Left Column: Education */}
         <Grid
           item
           xs={12}
@@ -102,29 +103,30 @@ const Resume = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
-            alignItems: 'center', 
-            
-
+            alignItems: { xs: 'center', md: 'center' },
+            mb: { xs: 4, md: 0 },
           }}
         >
           <Typography
             sx={{
-              fontSize: '1.5rem',
+              // Responsive heading
+              fontSize: { xs: '1.3rem', md: '1.5rem' },
               fontWeight: 'bold',
-              marginRight: '18rem',
-              color: "#1a3d47"
-
+              // On larger screens, push the text to the left
+              marginRight: { xs: 0, md: '18rem' },
+              color: '#1a3d47',
+              textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            🎓 Education 
+            🎓 Education
           </Typography>
+
           <Box display="flex" mt={2}>
             <Box
               display="flex"
               flexDirection="column"
               alignItems="center"
               position="relative"
-              
             >
               <Box
                 width="16px"
@@ -141,7 +143,7 @@ const Resume = () => {
                 variant="h4"
                 component="h4"
                 sx={{
-                  fontSize: '1.1rem',
+                  fontSize: { xs: '1rem', md: '1.1rem' },
                   fontWeight: 'bold',
                   color: '#f76e65',
                 }}
@@ -150,14 +152,29 @@ const Resume = () => {
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: "#1a3d47" }}
+                sx={{
+                  fontStyle: 'italic',
+                  fontWeight: 'bold',
+                  mt: 1,
+                  color: '#1a3d47',
+                }}
               >
                 2022-2026 (Expected)
               </Typography>
-              <Typography variant="body1" sx={{ fontStyle: 'italic', mt: 1, color: "#1a3d47"}}>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
                 Purdue University, West Lafayette, IN
               </Typography>
-              <Typography sx={{ mt: 1, textDecoration: 'underline', textUnderlineOffset: '4px', color: "#1a3d47"}}>
+              <Typography
+                sx={{
+                  mt: 1,
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px',
+                  color: '#1a3d47',
+                }}
+              >
                 Relevant Course Work
               </Typography>
               <Box
@@ -166,28 +183,49 @@ const Resume = () => {
                   listStyleType: 'disc',
                   listStylePosition: 'inside',
                   mt: 2,
-
+                  // Slightly smaller text for the list on mobile
+                  fontSize: { xs: '0.95rem', md: '1rem' },
                 }}
               >
-                <Typography component="li" sx={{color: "#1a3d47"}}>CS 18000 - Object-Oriented Programming</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 19300 - Developer Tools</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 18200 - Discrete Mathematics</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 21100 - Competitive Programming I</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 24000 - Programming in C</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 25000 - Computer Architecture</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 25100 - Data Structures and Algorithms</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 25200 - Systems Programming</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 30700 - Software Engineering I</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 37500 - Human and Computer Interaction</Typography>
-                <Typography component="li"sx={{color: "#1a3d47"}}>CS 38100 - Introduction to the Analysis of Algorithms</Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 18000 - Object-Oriented Programming
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 19300 - Developer Tools
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 18200 - Discrete Mathematics
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 21100 - Competitive Programming I
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 24000 - Programming in C
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 25000 - Computer Architecture
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 25100 - Data Structures and Algorithms
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 25200 - Systems Programming
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 30700 - Software Engineering I
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 37500 - Human and Computer Interaction
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 38100 - Introduction to the Analysis of Algorithms
+                </Typography>
               </Box>
-
-
             </Box>
           </Box>
         </Grid>
 
-        {/* Right Column */}
+        {/* Right Column: Professional Experience */}
         <Grid
           item
           xs={12}
@@ -196,19 +234,21 @@ const Resume = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
-            alignItems: 'start', 
           }}
         >
           <Typography
             sx={{
-              fontSize: '1.5rem',
+              fontSize: { xs: '1.3rem', md: '1.5rem' },
               fontWeight: 'bold',
               marginBottom: '1rem',
-              color: "#1a3d47"
+              color: '#1a3d47',
+              textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            💻 Professional Experience 
+            💻 Professional Experience
           </Typography>
+
+          {/* 1. Undergraduate Data Science Researcher */}
           <Box display="flex">
             <Box
               display="flex"
@@ -226,12 +266,12 @@ const Resume = () => {
               />
               <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
               <Typography
                 variant="h4"
                 component="h4"
                 sx={{
-                  fontSize: '1.1rem',
+                  fontSize: { xs: '1rem', md: '1.1rem' },
                   fontWeight: 'bold',
                   color: '#f76e65',
                 }}
@@ -240,11 +280,19 @@ const Resume = () => {
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: "#1a3d47"}}
+                sx={{
+                  fontStyle: 'italic',
+                  fontWeight: 'bold',
+                  mt: 1,
+                  color: '#1a3d47',
+                }}
               >
                 August 2024 - Present
               </Typography>
-              <Typography variant="body1" sx={{ fontStyle: 'italic', mt: 1, color: "#1a3d47" }}>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
                 Purdue University, West Lafayette, IN
               </Typography>
               <Box
@@ -254,20 +302,22 @@ const Resume = () => {
                   listStylePosition: 'inside',
                   mt: 2,
                   pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
                 }}
               >
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Created an AI-powered chatbot for Wabash National's website, developing a responsive and user-friendly front-end
                   interface that improved customer support efficiency and reduced reliance on call center agents
                 </Typography>
-                <Typography sx={{color: "#1a3d47"}} component="li">
-                  Applied Agile/Scrumban methodology within a team of 8, executing 2-week sprints, reviews, demos, and backlog manage
-                  ment via Azure DevOps
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Applied Agile/Scrumban methodology within a team of 8, executing 2-week sprints, reviews, demos, and backlog
+                  management via Azure DevOps
                 </Typography>
-      
               </Box>
             </Box>
           </Box>
+
+          {/* 2. AI & Game Development Research Assistant */}
           <Box display="flex">
             <Box
               display="flex"
@@ -285,25 +335,28 @@ const Resume = () => {
               />
               <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
               <Typography
                 variant="h4"
                 component="h4"
                 sx={{
-                  fontSize: '1.1rem',
+                  fontSize: { xs: '1rem', md: '1.1rem' },
                   fontWeight: 'bold',
                   color: '#f76e65',
                 }}
               >
-                 AI & GameDevelopment Research Assistant
+                AI & GameDevelopment Research Assistant
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: "#1a3d47" }}
+                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
-                January  2025 - Present
+                January 2025 - Present
               </Typography>
-              <Typography variant="body1" sx={{ fontStyle: 'italic', mt: 1, color: "#1a3d47" }}>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
                 Purdue University, West Lafayette, IN
               </Typography>
               <Box
@@ -313,18 +366,21 @@ const Resume = () => {
                   listStylePosition: 'inside',
                   mt: 2,
                   pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
                 }}
               >
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Collaborated with a team to develop AI-driven Non-Player Characters (NPCs) and interactive virtual environments
                 </Typography>
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Contributed to the design and implementation of NPC behaviors using Unreal Engine and machine learning techniques
                 </Typography>
               </Box>
             </Box>
           </Box>
-          <Box display="flex" >
+
+          {/* 3. Undergraduate Teaching Assistant - Undergraduate Student Board */}
+          <Box display="flex">
             <Box
               display="flex"
               flexDirection="column"
@@ -341,12 +397,12 @@ const Resume = () => {
               />
               <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
               <Typography
                 variant="h4"
                 component="h4"
                 sx={{
-                  fontSize: '1.1rem',
+                  fontSize: { xs: '1rem', md: '1.1rem' },
                   fontWeight: 'bold',
                   color: '#f76e65',
                 }}
@@ -355,11 +411,14 @@ const Resume = () => {
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: "#1a3d47" }}
+                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
                 January 2025 - Present
               </Typography>
-              <Typography variant="body1" sx={{ fontStyle: 'italic', mt: 1, color: "#1a3d47" }}>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
                 Purdue University, West Lafayette, IN
               </Typography>
               <Box
@@ -369,19 +428,21 @@ const Resume = () => {
                   listStylePosition: 'inside',
                   mt: 2,
                   pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
                 }}
               >
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Conducted office hours focused on helping students master Object-Oriented Programming and C Programming
                 </Typography>
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Delivered personalized guidance to enhance students’ understanding and application of core programming concepts
                 </Typography>
-
               </Box>
             </Box>
           </Box>
-          <Box display="flex" >
+
+          {/* 4. Undergraduate Teaching Assistant - Tools */}
+          <Box display="flex">
             <Box
               display="flex"
               flexDirection="column"
@@ -398,12 +459,12 @@ const Resume = () => {
               />
               <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
               <Typography
                 variant="h4"
                 component="h4"
                 sx={{
-                  fontSize: '1.1rem',
+                  fontSize: { xs: '1rem', md: '1.1rem' },
                   fontWeight: 'bold',
                   color: '#f76e65',
                 }}
@@ -412,11 +473,14 @@ const Resume = () => {
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: "#1a3d47" }}
+                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
                 August 2024 - December 2024
               </Typography>
-              <Typography variant="body1" sx={{ fontStyle: 'italic', mt: 1, color: "#1a3d47" }}>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
                 Purdue University, West Lafayette, IN
               </Typography>
               <Box
@@ -426,21 +490,24 @@ const Resume = () => {
                   listStylePosition: 'inside',
                   mt: 2,
                   pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
                 }}
               >
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Monitored and responded to student questions on Ed Discussion regarding terminal commands, Git/GitHub, and LaTeX
                 </Typography>
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Conducted virtual office hours focused on helping students master terminal commands, Git/GitHub operations, and LateX
                 </Typography>
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Graded assignments and provided feedback to support student’s understanding of course concepts
                 </Typography>
               </Box>
             </Box>
           </Box>
-          <Box display="flex" >
+
+          {/* 5. Software Development Research Assistant */}
+          <Box display="flex">
             <Box
               display="flex"
               flexDirection="column"
@@ -457,12 +524,12 @@ const Resume = () => {
               />
               <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-            <Box sx={{padding: '0 1rem 1rem 1rem'}}>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
               <Typography
-                variant="h4 "
+                variant="h4"
                 component="h4"
                 sx={{
-                  fontSize: '1.1rem',
+                  fontSize: { xs: '1rem', md: '1.1rem' },
                   fontWeight: 'bold',
                   color: '#f76e65',
                 }}
@@ -471,11 +538,14 @@ const Resume = () => {
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: "#1a3d47"}}
+                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
                 August 2024 - December 2024
               </Typography>
-              <Typography variant="body1" sx={{ fontStyle: 'italic', mt: 1, color: "#1a3d47"}}>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
                 Purdue University, West Lafayette, IN
               </Typography>
               <Box
@@ -485,12 +555,13 @@ const Resume = () => {
                   listStylePosition: 'inside',
                   mt: 2,
                   pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
                 }}
               >
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Developed an engaging landing page for the ECELabs.io website, aimed at showcasing the platform’s capabilities
                 </Typography>
-                <Typography sx={{color: "#1a3d47"}} component="li">
+                <Typography sx={{ color: '#1a3d47' }} component="li">
                   Maintained the ECELabs.io website to enable remote access to hardware labs across Electrical and Computer Engineering
                 </Typography>
               </Box>
