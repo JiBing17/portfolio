@@ -5,6 +5,7 @@ const Resume = () => {
   const resumeRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
+  // used to keep track of section tracking
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

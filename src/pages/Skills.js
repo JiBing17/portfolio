@@ -5,6 +5,7 @@ const Skills = () => {
   const skillsRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
+  // array of objects used for iteration purposes to display my set of skills with their corresponding info
   const skills = [
     { name: 'Python', icon: 'devicon-python-plain', color: '#3776AB' },
     { name: 'C++', icon: 'devicon-cplusplus-plain', color: '#00599C' },
@@ -67,10 +68,10 @@ const Skills = () => {
         htmlcss: 0,
       };
 
-  // Helper to render a row label + percentage + bar
+  // Helper function used to render a row label + percentage + bar
   const renderBarRow = (label, value) => (
     <Box sx={{ marginBottom: '1.5rem' }}>
-      {/* Row with label (left) and percentage (right) */}
+      {/* Row with text label (left) and percentage (right) */}
       <Box
         sx={{
           display: 'flex',

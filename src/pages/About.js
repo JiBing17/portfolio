@@ -8,30 +8,36 @@ const About = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Create a new IntersectionObserver instance
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          // Check if the target element is in view 
           if (entry.isIntersecting) {
-            setVisible(true);
-            observer.unobserve(entry.target);
+            setVisible(true); // Update the state to indicate the element is visible
+            observer.unobserve(entry.target); // Stop observing the element 
           }
         });
       },
       {
+        // 10% of the element must be in view to trigger the observer
         threshold: 0.1,
       }
     );
-
+  
+    // Check if the aboutRef is attached to a DOM element
     if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
+      observer.observe(aboutRef.current); // Start observing the element for intersection changes
 
+    }
     return () => {
       if (aboutRef.current) {
-        observer.unobserve(aboutRef.current);
+        observer.unobserve(aboutRef.current); // Stop observing the element when the component is unmounted
+
       }
     };
   }, []);
+  
 
   return (
     <Box
@@ -73,7 +79,7 @@ const About = () => {
 
       <Box
         sx={{
-          // Use responsive width so it scales down for smaller screens
+          // responsive width
           width: { xs: '90%', md: '75%' },
           margin: 'auto',
           display: 'flex',
@@ -81,6 +87,7 @@ const About = () => {
           alignItems: 'center',
         }}
       >
+        {/* Intro Text */}
         <Typography
           sx={{
             textAlign: 'center',
@@ -94,19 +101,17 @@ const About = () => {
           Computer Science 💻. My current interests lie in ,{' '} 
           <strong className="text-coral">software engineering</strong>, 
           <strong className="text-coral"> web development</strong>, 
-          and <strong className="text-coral">Human Computer Interaction</strong>.
+          and <strong className="text-coral">human computer interaction</strong>.
         </Typography>
 
         <Box
           sx={{
             display: 'flex',
-            // Switch from column to row at the 'md' breakpoint
             flexDirection: { xs: 'column', md: 'row' },
             justifyContent: 'center',
             alignItems: 'stretch',
             gap: '2rem',
             marginTop: '1rem',
-            // Let height adjust automatically; remove fixed height for smaller screens
           }}
         >
           {/* Image Section */}
@@ -116,11 +121,9 @@ const About = () => {
             alt="Profile"
             sx={{
               width: { xs: '100%', md: '40%' },
-              // Let the height be auto on mobile, fill container on larger screens
-              height: { xs: 'auto', md: '550px' },
+              height: { xs: 'auto', md: '500px' },
               objectFit: 'cover',
               borderRadius: '15px',
-              marginBottom: { xs: '2rem', md: 0 },
             }}
           />
 
@@ -131,6 +134,7 @@ const About = () => {
               flexDirection: 'column',
               justifyContent: 'center',
               flex: 1,
+              
             }}
           >
             <Box
@@ -139,7 +143,6 @@ const About = () => {
                 flexDirection: 'column',
                 alignItems: { xs: 'flex-start', sm: 'center' },
                 justifyContent: 'space-around',
-                p: '1rem',
               }}
             >
               <Typography
@@ -156,6 +159,7 @@ const About = () => {
                 Focus: Software Engineering
               </Typography>
 
+              {/* Left Container bullet points */}
               <Box
                 sx={{
                   display: 'flex',
@@ -164,44 +168,51 @@ const About = () => {
                   justifyContent: 'center',
                   gap: '1rem',
                   marginTop: { xs: '1rem', md: '2rem' },
+                  width: "100%"
+
                 }}
               >
                 <Box
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    padding: '1rem',
-                    
+                    justifyContent: 'center',
+                    alignItems: "center",
+                    width: "100%"
                   }}
                 >
-                  <Typography sx={{ color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, }}>
+                  <Typography sx={{ color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, margin: "0 auto" }}>
                     <ChevronRightIcon sx={{ color: '#f76e65' }} />
                     <strong>Email:</strong> jibingni17@gmail.com
                   </Typography>
-                  <Typography sx={{ color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'} }}>
+                  <Typography sx={{ color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, margin: "0 auto" }}>
                     <ChevronRightIcon sx={{ color: '#f76e65' }} />
-                    <strong>Location:</strong> Indianapolis, Indiana
+                    <strong>Location:</strong> Indianapolis, IN
                   </Typography>
                 </Box>
+
+                {/* Right Container bullet points */}
                 <Box
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    padding: '1rem',
+                    width: "100%"
+
                   }}
                 >
-                  <Typography sx={{ color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'} }}>
+                  <Typography sx={{ color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, margin: "0 auto" }}>
                   <ChevronRightIcon sx={{ color: '#f76e65' }} />
                     <strong>University:</strong> Purdue
                   </Typography>
-                  <Typography sx={{ color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'} }}>
+                  <Typography sx={{ color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, margin: "0 auto" }}>
                     <ChevronRightIcon sx={{ color: '#f76e65'}} />
                     <strong>Major:</strong> Computer Science
                   </Typography>
                 </Box>
               </Box>
-
-              <Typography sx={{ margin: '.5rem 0', color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, textAlign: {xs: 'center', sm: 'left'} }}>
+              
+              {/* Follow up text */}
+              <Typography sx={{ margin: '.5rem 0', color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, textAlign: {xs: 'center', sm: 'left'}, marginTop: "1rem"}}>
 
                 My academic journey includes experience as an
                 <strong className="text-coral"> Undergraduate Teaching Assistant</strong>, guiding

@@ -1,21 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import {
-  Box,
-  Typography,
-  Grid,
-  Card,
-  CardMedia,
-  CardActions,
-  Button,
-  Dialog,
-  DialogContent,
-  IconButton,
-} from '@mui/material';
+import { Box, Typography, Grid, Card, CardMedia, CardActions, Button, Dialog, DialogContent, IconButton} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import project1 from '../icons/project-1.png';
 import project2 from '../icons/project-2.png';
 import project3 from '../icons/project-3.png';
 
+// array of objects used to describe the projects that I have made and the info about each one of them
 const projects = [
   {
     title: 'PokeAPI',
@@ -44,11 +34,14 @@ const projects = [
 ];
 
 const Projects = () => {
+
+  // states used to keep track of visuals (view mode, opened or not, etc.)
   const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const projectsRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
+  // used to keep track of section tracking
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

@@ -3,6 +3,8 @@ import { Box, IconButton } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 const BackToTop = () => {
+
+  // state used to determined whether or not we should hide this component
   const [showButton, setShowButton] = useState(false);
 
   // Show the button when the user scrolls down
@@ -29,9 +31,9 @@ const BackToTop = () => {
 
   return (
     <Box
+      // Responsive positioning (slightly larger offset on bigger screens)
       sx={{
         position: 'fixed',
-        // Responsive positioning (slightly larger offset on bigger screens)
         bottom: { xs: '1rem', md: '2rem' },
         right: { xs: '1rem', md: '2rem' },
         zIndex: 1000,
