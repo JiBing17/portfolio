@@ -18,7 +18,7 @@ const projects = [
   {
     title: 'Landing Page for ECELabs.io',
     tools: ['HTML', 'CSS', 'Javascript'],
-    github: 'https://github.com/example/project2',
+    github: 'https://github.com/JiBing17/ECELabs.io-Landing-Page',
     picture: project2,
     description:
       'I developed an engaging landing page for the ECELabs.io website, aimed at attracting and expanding the user base by showcasing the platform’s capabilities.',
