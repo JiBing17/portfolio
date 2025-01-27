@@ -1,9 +1,43 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Box, Typography, Grid, Card, CardMedia, CardActions, Button, Dialog, DialogContent, IconButton} from '@mui/material';
+import { useState, useRef, useEffect } from 'react';
+import {
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardMedia,
+  CardActions,
+  Button,
+  Dialog,
+  DialogContent,
+  IconButton
+} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import project1 from '../icons/project-1.png';
-import project2 from '../icons/project-2.png';
-import project3 from '../icons/project-3.png';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+import project1 from '../icons/project-1.png'
+import project1_2 from '../icons/project-1-2.png'
+import project1_3 from '../icons/project-1-3.png'
+import project1_4 from '../icons/project-1-4.png'
+
+import project2 from '../icons/project-2.png'
+import project2_2 from '../icons/project-2-2.png'
+import project2_3 from '../icons/project-2-3.png'
+import project2_4 from '../icons/project-2-4.png'
+import project2_5 from '../icons/project-2-5.png'
+import project2_6 from '../icons/project-2-6.png'
+
+import project3 from '../icons/project-3.png'
+import project3_2 from '../icons/project-3-2.png'
+import project3_3 from '../icons/project-3-3.png'
+import project3_4 from '../icons/project-3-4.png'
+import project3_5 from '../icons/project-3-5.png'
+import project3_6 from '../icons/project-3-6.png'
+
+
+import project4 from '../icons/project-4.png'
+import project4_2 from '../icons/project-4-2.png'
+import project4_3 from '../icons/project-4-3.png'
 
 // array of objects used to describe the projects that I have made and the info about each one of them
 const projects = [
@@ -11,15 +45,15 @@ const projects = [
     title: 'PokeAPI',
     tools: ['React', 'Node.js', 'MongoDB', 'Express.js', 'TailwindCSS', 'MUI'],
     github: 'https://github.com/JiBing17/pokemonAPI',
-    picture: project1,
+    pictures: [project1, project1_2, project1_3, project1_4], 
     description:
-      'I developed a Pokémon web application using the MERN stack, featuring secure user authentication, a responsive UI, and advanced Pokémon display with sorting, search, and pagination. Users can manage favorites, while the backend ensures efficient data processing and robust error handling.',
+      'I developed a Pokémon MERN stack web application using PokeAPI, featuring secure user authentication, a responsive UI, and advanced Pokémon display with sorting, search, and pagination. Users can create accounts to manage favorites, while the backend handles the data with error handling.',
   },
   {
     title: 'Landing Page for ECELabs.io',
     tools: ['HTML', 'CSS', 'Javascript'],
     github: 'https://github.com/JiBing17/ECELabs.io-Landing-Page',
-    picture: project2,
+    pictures: [project2, project2_2, project2_3, project2_4, project2_5, project2_6],
     description:
       'I developed an engaging landing page for the ECELabs.io website, aimed at attracting and expanding the user base by showcasing the platform’s capabilities.',
   },
@@ -27,9 +61,17 @@ const projects = [
     title: 'EvoPlan',
     tools: ['React', 'Flask', 'SQLAlchemy', 'Open-Meteo API', 'Google Geolocation API'],
     github: 'https://github.com/Z3yphr/CS307-Project',
-    picture: project3,
+    pictures: [project3, project3_2, project3_3, project3_4, project3_5, project3_6],
     description:
       'I collaborated in a six-member Scrum team, contributing to sprint planning, stand-ups, retrospectives, and backlog management, delivering 70+ high-value features. Engineered a client-server application using React.js for front-end, Flask for server-side development, SQLAlchemy for database, and integrated APIs like Weather API and Geolocation API for real-time functionality.',
+  },
+  {
+    title: 'Marketplace Messaging App',
+    tools: ['Java', 'SObject-Oriented Programming (OOP)', 'Socket Programming', 'File I/O Operations', 'Data Structures'],
+    github: 'https://github.com/Taconio/CS-180-Project5',
+    pictures: [project4, project4_2, project4_3],
+    description:
+      'I collaborated in a team of 5 to develop a messaging application for the CS180 cumulative final project. The app features account creation, real-time customer-seller messaging, user management, and message statistics, utilizing OOP, socket programming, and file I/O.',
   },
 ];
 
@@ -38,6 +80,7 @@ const Projects = () => {
   // states used to keep track of visuals (view mode, opened or not, etc.)
   const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const projectsRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -68,6 +111,7 @@ const Projects = () => {
 
   const handleOpen = (project) => {
     setSelectedProject(project);
+    setCurrentImageIndex(0); // reset to the first image each time you open
     setOpen(true);
   };
 
@@ -76,12 +120,28 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
+  // Move to the previous image in the array
+  const handlePrevImage = () => {
+    if (!selectedProject) return;
+    setCurrentImageIndex((prevIndex) => {
+      // For a wrap-around effect, use modulo
+      return (prevIndex - 1 + selectedProject.pictures.length) % selectedProject.pictures.length;
+    });
+  };
+
+  // Move to the next image in the array
+  const handleNextImage = () => {
+    if (!selectedProject) return;
+    setCurrentImageIndex((prevIndex) => {
+      return (prevIndex + 1) % selectedProject.pictures.length;
+    });
+  };
+
   return (
     <Box
       id="projects"
       ref={projectsRef}
       sx={{
-        // Responsive padding
         px: { xs: '1rem', sm: '2rem', md: '4rem' },
         py: { xs: '2rem', md: '4rem' },
         opacity: visible ? 1 : 0,
@@ -139,8 +199,8 @@ const Projects = () => {
           color: 'white',
           fontSize: { xs: '1rem', md: '1.1rem' },
         }}
-      >
-        A collection of my work!
+      > 
+        A collection of my work, big and small 🌟
       </Typography>
 
       {/* Cards Grid */}
@@ -179,7 +239,7 @@ const Projects = () => {
               {/* Project Image */}
               <CardMedia
                 component="img"
-                image={project.picture}
+                image={project.pictures[0]}
                 alt={project.title}
                 sx={{
                   transition: 'transform 0.3s ease',
@@ -265,9 +325,9 @@ const Projects = () => {
                 right: 16,
                 color: '#ffffff',
                 zIndex: 10,
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                backgroundColor: 'rgba(255, 133, 120, 0.8)',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.4)',
+                  backgroundColor: 'rgba(255, 133, 120, 0.9)',
                 },
               }}
               onClick={handleClose}
@@ -275,18 +335,64 @@ const Projects = () => {
               <CloseIcon />
             </IconButton>
 
-            {/* Project Image (Dialog) */}
+            {/* CAROUSEL SECTION */}
             <Box
               sx={{
-                backgroundImage: `url(${selectedProject.picture})`,
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
+                position: 'relative',
                 width: '100%',
                 // Responsive height in dialog
                 height: { xs: '40vh', md: '70vh' },
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
-            />
+            >
+              {/* Background image for the currently active index */}
+              <Box
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundImage: `url(${selectedProject.pictures[currentImageIndex]})`,
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
+              {/* Prev Button */}
+              <IconButton
+                onClick={handlePrevImage}
+                sx={{
+                  position: 'absolute',
+                  left: { xs: '5%', sm: '10%' }, 
+                  color: 'white',
+                  fontSize: { xs: '2rem', sm: '2.5rem' }, 
+                  padding: { xs: '0.5rem', sm: '1rem' },
+                  backgroundColor: 'rgba(255, 133, 120, 0.8)',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 133, 120, 0.9)',
+                  },
+                }}
+              >
+                <ArrowBackIosIcon />
+              </IconButton>
+              {/* Next Button */}
+              <IconButton
+                onClick={handleNextImage}
+                sx={{
+                  position: 'absolute',
+                  right: { xs: '5%', sm: '10%' }, 
+                  color: 'white',
+                  fontSize: { xs: '2rem', sm: '2.5rem' }, 
+                  padding: { xs: '0.5rem', sm: '1rem' }, 
+                  backgroundColor: 'rgba(255, 133, 120, 0.8)',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 133, 120, 0.9)',
+                  },
+                }}
+              >
+                <ArrowForwardIosIcon />
+              </IconButton>
+            </Box>
 
             {/* Project Description */}
             <Box

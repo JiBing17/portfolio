@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Grid, Link } from '@mui/material';
 
 const Resume = () => {
   const resumeRef = useRef(null);
@@ -84,6 +84,15 @@ const Resume = () => {
       >
         Resume
       </Typography>
+      <Typography sx={{ textAlign: "center"}}>
+          A brief list of things that I've been doing. You can view my official resume{' '}
+          <Link
+            href={`${process.env.PUBLIC_URL}/resume_2025.pdf`} target="_blank" rel="noopener noreferrer"
+            sx={{color: "#f76e65", textDecoration: "none"}}
+          >
+            here
+          </Link> 
+      </Typography>
 
       <Grid
         container
@@ -95,6 +104,7 @@ const Resume = () => {
           margin: '0 auto',
         }}
       >
+        
         {/* Left Column: Education */}
         <Grid
           item
