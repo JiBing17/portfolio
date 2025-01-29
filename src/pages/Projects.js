@@ -19,6 +19,7 @@ import project1 from '../icons/project-1.png'
 import project1_2 from '../icons/project-1-2.png'
 import project1_3 from '../icons/project-1-3.png'
 import project1_4 from '../icons/project-1-4.png'
+import project1_5 from '../icons/project-1-5.png'
 
 import project2 from '../icons/project-2.png'
 import project2_2 from '../icons/project-2-2.png'
@@ -45,7 +46,7 @@ const projects = [
     title: 'PokeAPI',
     tools: ['React', 'Node.js', 'MongoDB', 'Express.js', 'TailwindCSS', 'MUI'],
     github: 'https://github.com/JiBing17/pokemonAPI',
-    pictures: [project1, project1_2, project1_3, project1_4], 
+    pictures: [project1, project1_2, project1_3, project1_4, project1_5], 
     description:
       'I developed a Pokémon MERN stack web application using PokeAPI, featuring secure user authentication, a responsive UI, and advanced Pokémon display with sorting, search, and pagination. Users can create accounts to manage favorites, while the backend handles the data with error handling.',
   },
