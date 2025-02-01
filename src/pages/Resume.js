@@ -199,6 +199,9 @@ const Resume = () => {
                 }}
               >
                 <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 17700 - Python Programming
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
                   CS 18000 - Object-Oriented Programming
                 </Typography>
                 <Typography component="li" sx={{ color: '#1a3d47' }}>
@@ -226,10 +229,10 @@ const Resume = () => {
                   CS 30700 - Software Engineering I
                 </Typography>
                 <Typography component="li" sx={{ color: '#1a3d47' }}>
-                  CS 37500 - Human and Computer Interaction
+                  CS 38100 - Introduction to the Analysis of Algorithms
                 </Typography>
                 <Typography component="li" sx={{ color: '#1a3d47' }}>
-                  CS 38100 - Introduction to the Analysis of Algorithms
+                  CS 47500 - Human and Computer Interaction
                 </Typography>
               </Box>
             </Box>
@@ -259,76 +262,8 @@ const Resume = () => {
             💻 Professional Experience
           </Typography>
 
-          {/* 1. Undergraduate Data Science Researcher */}
-          <Box display="flex">
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              position="relative"
-            >
-              <Box
-                width="16px"
-                height="16px"
-                border="2px solid #f76e65"
-                borderRadius="50%"
-                zIndex={10}
-                bgcolor="white"
-              />
-              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
-            </Box>
-            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
-              <Typography
-                variant="h4"
-                component="h4"
-                sx={{
-                  fontSize: { xs: '1rem', md: '1.1rem' },
-                  fontWeight: 'bold',
-                  color: '#f76e65',
-                }}
-              >
-                Undergraduate Data Science Researcher
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  fontStyle: 'italic',
-                  fontWeight: 'bold',
-                  mt: 1,
-                  color: '#1a3d47',
-                }}
-              >
-                August 2024 - Present
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
-              >
-                Purdue University, West Lafayette, IN
-              </Typography>
-              <Box
-                component="ul"
-                sx={{
-                  listStyleType: 'disc',
-                  listStylePosition: 'inside',
-                  mt: 2,
-                  pl: 2,
-                  fontSize: { xs: '0.95rem', md: '1rem' },
-                }}
-              >
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Created an AI-powered chatbot for Wabash National's website, developing a responsive and user-friendly front-end
-                  interface that improved customer support efficiency and reduced reliance on call center agents
-                </Typography>
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Applied Agile/Scrumban methodology within a team of 8, executing 2-week sprints, reviews, demos, and backlog
-                  management via Azure DevOps
-                </Typography>
-              </Box>
-            </Box>
-          </Box>
 
-          {/* 2. AI & Game Development Research Assistant */}
+          {/* 1. Computer Vision & Machine Learning Research Assistant  */}
           <Box display="flex">
             <Box
               display="flex"
@@ -356,7 +291,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                AI & GameDevelopment Research Assistant
+                Computer Vision & Machine Learning Research Assistant 
               </Typography>
               <Typography
                 variant="body1"
@@ -381,16 +316,19 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Collaborated with a team to develop AI-driven Non-Player Characters (NPCs) and interactive virtual environments
+                  Developed computer vision models with PyTorch, enabling better analysis of animal behavior
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Contributed to the design and implementation of NPC behaviors using Unreal Engine and machine learning techniques
+                  Processed image and video data with machine learning, improving model performance/accuracy
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Collaborated in a team of 9, delivering weekly presentations to showcase research findings
                 </Typography>
               </Box>
             </Box>
           </Box>
-
-          {/* 3. Undergraduate Teaching Assistant - Undergraduate Student Board */}
+          
+          {/* 2. Undergraduate Teaching Assistant - Undergraduate Student Board */}
           <Box display="flex">
             <Box
               display="flex"
@@ -451,6 +389,80 @@ const Resume = () => {
               </Box>
             </Box>
           </Box>
+
+          {/* 3. Undergraduate Data Science Researcher */}
+          <Box display="flex">
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              position="relative"
+            >
+              <Box
+                width="16px"
+                height="16px"
+                border="2px solid #f76e65"
+                borderRadius="50%"
+                zIndex={10}
+                bgcolor="white"
+              />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
+            </Box>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
+              <Typography
+                variant="h4"
+                component="h4"
+                sx={{
+                  fontSize: { xs: '1rem', md: '1.1rem' },
+                  fontWeight: 'bold',
+                  color: '#f76e65',
+                }}
+              >
+                Undergraduate Data Science Researcher
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontStyle: 'italic',
+                  fontWeight: 'bold',
+                  mt: 1,
+                  color: '#1a3d47',
+                }}
+              >
+                August 2024 - Present
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
+                Purdue University, West Lafayette, IN
+              </Typography>
+              <Box
+                component="ul"
+                sx={{
+                  listStyleType: 'disc',
+                  listStylePosition: 'inside',
+                  mt: 2,
+                  pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                }}
+              >
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Developed an AI-powered chatbot for Wabash, reducing reliance on call center agents
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Trained a machine learning model, resulting in more precise responses for customers
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Implemented a user-friendly React interface, improving chatbot efficency and user experience
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Collaborated in a team of 8, applying Agile practices via Azure DevOps to enhance efficiency
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+
 
           {/* 4. Undergraduate Teaching Assistant - Tools */}
           <Box display="flex">
@@ -570,10 +582,10 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Developed an engaging landing page for the ECELabs.io website, aimed at showcasing the platform’s capabilities
+                  Developed a landing page for the ECELabs.io website, attracting new users to the website
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Maintained the ECELabs.io website to enable remote access to hardware labs across Electrical and Computer Engineering
+                  Modernized the ECELabs.io website, improving user experience while maintaining remote access to hardware labs for 450+ students
                 </Typography>
               </Box>
             </Box>
