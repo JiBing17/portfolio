@@ -381,7 +381,7 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Conducted office hours focused on helping students master Object-Oriented Programming and C Programming
+                  Conducted office hours for 1080+ students focused on helping them master Object-Oriented Programming and C Programming
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
                   Delivered personalized guidance to enhance students’ understanding and application of core programming concepts
@@ -463,6 +463,69 @@ const Resume = () => {
             </Box>
           </Box>
 
+          {/* 3.9 CS Tutor */}
+          <Box display="flex">
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              position="relative"
+            >
+              <Box
+                width="16px"
+                height="16px"
+                border="2px solid #f76e65"
+                borderRadius="50%"
+                zIndex={10}
+                bgcolor="white"
+              />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
+            </Box>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
+              <Typography
+                variant="h4"
+                component="h4"
+                sx={{
+                  fontSize: { xs: '1rem', md: '1.1rem' },
+                  fontWeight: 'bold',
+                  color: '#f76e65',
+                }}
+              >
+                Computer Science Tutor 
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
+              >
+                August 2024 - Present
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
+                Purdue University, West Lafayette, IN
+              </Typography>
+              <Box
+                component="ul"
+                sx={{
+                  listStyleType: 'disc',
+                  listStylePosition: 'inside',
+                  mt: 2,
+                  pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                }}
+              >
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Led 1-on-1 tutoring sessions for Python, strengthening their programming skills
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Held office hours for Systems and Competitive Programming, clarifying complex concepts
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+
+
 
           {/* 4. Undergraduate Teaching Assistant - Tools */}
           <Box display="flex">
@@ -517,13 +580,13 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Monitored and responded to student questions on Ed Discussion regarding terminal commands, Git/GitHub, and LaTeX
+                  Monitored and responded to 200+ student questions on Ed Discussion regarding terminal commands, Git/GitHub, and LaTeX
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Conducted virtual office hours focused on helping students master terminal commands, Git/GitHub operations, and LateX
+                  Conducted virtual office hours for 900+ students focused on helping them master terminal commands, Git/GitHub operations, and LateX
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Graded assignments and provided feedback to support student’s understanding of course concepts
+                  Graded 80+ assignments and provided feedback to support student’s understanding of course concepts
                 </Typography>
               </Box>
             </Box>
@@ -582,10 +645,14 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Developed a landing page for the ECELabs.io website, attracting new users to the website
+                  Developed a landing page with HTML, CSS, and JavaScript for ECELabs.io, attracting new users
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Modernized the ECELabs.io website, improving user experience while maintaining remote access to hardware labs for 450+ students
+                  Enhanced the ECELabs.io website by redesigning a modern homepage, improving user experience
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Collaborated in a software team of 5 to hold weekly meetings, maintaining remote access to hardware labs for
+                  450+ students
                 </Typography>
               </Box>
             </Box>

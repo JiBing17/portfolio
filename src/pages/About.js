@@ -122,7 +122,7 @@ const About = () => {
             alt="Profile"
             sx={{
               width: { xs: '100%', md: '40%' },
-              height: { xs: 'auto', md: '500px' },
+              height: { xs: 'auto', md: '550px' },
               objectFit: 'cover',
               borderRadius: '15px',
             }}
