@@ -230,9 +230,9 @@ const About = () => {
               </Typography>
 
               <Typography sx={{ margin: '.5rem 0', color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, textAlign: {xs: 'center', sm: 'left'} }}>
-                I have also conducted research developing computer vision models with
+                Some of my work-related experience includes developing computer vision models with
                 <strong className="text-coral"> PyTorch</strong> to enable better analysis of animal behavior,
-                designing a landing page with fundamental web tools such as <strong className="text-coral">HTML, CSS, and Javascript </strong>for the <strong className="text-coral">ECELabs.io</strong> website to attract new users to the website, and creating an AI-powered chatbot for 
+                developing a landing page with fundamental web programming tools such as <strong className="text-coral">HTML, CSS, and Javascript </strong>for the <strong className="text-coral">ECELabs.io</strong> website to attract new users to the website, and creating an AI-powered chatbot for 
                 <strong className="text-coral"> Wabash National&apos;s</strong> website to reduce reliance on call 
                 center agents.
               </Typography>

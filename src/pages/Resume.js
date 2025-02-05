@@ -557,7 +557,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                Software Development Research Assistant
+                Software Developer
               </Typography>
               <Typography
                 variant="body1"
