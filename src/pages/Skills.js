@@ -53,9 +53,9 @@ const Skills = () => {
   const barValues = visible
     ? {
         python: 90,
-        c: 80,
-        sql: 75,
-        java: 80,
+        c: 85,
+        sql: 80,
+        java: 85,
         javascript: 90,
         htmlcss: 95,
       }

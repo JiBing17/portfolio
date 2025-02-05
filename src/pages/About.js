@@ -98,8 +98,9 @@ const About = () => {
           }}
         >
           Hello! 👋 My name is Ji Bing! I’m currently a junior at Purdue University, studying
-          Computer Science 💻. My current interests lie in ,{' '} 
+          Computer Science 💻. My current interests lie in,{' '} 
           <strong className="text-coral">software engineering</strong>, 
+          <strong className="text-coral"> databases</strong>,
           <strong className="text-coral"> web development</strong>, 
           and <strong className="text-coral">human computer interaction</strong>.
         </Typography>
@@ -229,10 +230,9 @@ const About = () => {
               </Typography>
 
               <Typography sx={{ margin: '.5rem 0', color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, textAlign: {xs: 'center', sm: 'left'} }}>
-                I have also conducted research developing AI-driven NPCs with
-                <strong className="text-coral"> Unreal Engine</strong> and <strong className="text-coral">machine learning</strong>, 
-                designing a landing page for the <strong className="text-coral">ECELabs.io</strong> website to support remote 
-                hardware lab access, and creating an AI-powered chatbot for 
+                I have also conducted research developing computer vision models with
+                <strong className="text-coral"> PyTorch</strong> to enable better analysis of animal behavior,
+                designing a landing page with fundamental web tools such as <strong className="text-coral">HTML, CSS, and Javascript </strong>for the <strong className="text-coral">ECELabs.io</strong> website to attract new users to the website, and creating an AI-powered chatbot for 
                 <strong className="text-coral"> Wabash National&apos;s</strong> website to reduce reliance on call 
                 center agents.
               </Typography>
