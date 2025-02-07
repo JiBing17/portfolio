@@ -40,8 +40,8 @@ const Resume = () => {
         py: { xs: '2rem', md: '4rem' },
         backgroundColor: '#ffffff',
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(30px)',
-        transition: 'opacity 1.3s ease-out, transform 1s ease-out',
+        transform: visible ? 'translateY(0)' : 'translateY(60px)',
+        transition: 'opacity 1.4s ease-out, transform 1.4s ease-out',
       }}
     >
       <Typography
@@ -316,10 +316,12 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Developed computer vision models with PyTorch, enabling better analysis of animal behavior
+                  Trained RTMPose models using OpenMMLab on AP-10K dataset with 10,015 images across 23 species,
+                  improving keypoint detection accuracy for animal behavior analysis
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Processed image and video data with machine learning, improving model performance/accuracy
+                  Labeled keypoints to create a high-quality dataset, then optimized models in Python with PyTorch, leading to
+                  improved model performance
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
                   Collaborated in a team of 9, delivering weekly presentations to showcase research findings

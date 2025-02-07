@@ -1,7 +1,32 @@
 import React from 'react';
 import { Box, Typography, Link, Stack } from '@mui/material';
+import { keyframes } from '@mui/system';
 import { TypeAnimation } from 'react-type-animation';
 import bgPic from '../icons/hero.png';
+
+// Define keyframes for sliding in from the left
+const slideInLeft = keyframes`
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+// Define keyframes for sliding in from the right
+const slideInRight = keyframes`
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
 
 const Hero = () => {
   return (
@@ -43,19 +68,6 @@ const Hero = () => {
           alignItems: { xs: 'center', md: 'flex-start' },
           justifyContent: { xs: 'center', md: 'flex-start' },
           flexDirection: 'column',
-
-          // pop in animation for text and icons 
-          '@keyframes popIn': {
-            '0%': {
-              transform: 'translate(60px, 40px) scale(0.4)', 
-              opacity: 0,
-            },
-            '100%': {
-              transform: 'translate(0, 0) scale(1)',
-              opacity: 1,
-            },
-          },
-          animation: 'popIn 1s ease-out forwards',
         }}
       >
         {/* Hero Text */}
@@ -65,6 +77,9 @@ const Hero = () => {
             fontWeight: 'bold',
             fontSize: { xs: '2rem', sm: '3rem', md: '5rem' },
             lineHeight: { xs: '2.5rem', sm: '3.5rem', md: '5.5rem' },
+            opacity: 0, // start hidden
+            animation: `${slideInLeft} 1s ease-out forwards`,
+            animationDelay: '0.5s', // first element: slides in from left
           }}
         >
           Ji Bing Ni
@@ -76,6 +91,9 @@ const Hero = () => {
             color: 'white',
             fontSize: { xs: '1rem', sm: '1.5rem', md: '2rem' },
             mt: { xs: '0.5rem', md: '1rem' },
+            opacity: 0, // start hidden
+            animation: `${slideInRight} 1s ease-out forwards`,
+            animationDelay: '1s', // second element: slides in from right
           }}
         >
           I&apos;m a{' '}
@@ -105,6 +123,9 @@ const Hero = () => {
           sx={{
             mt: { xs: '1rem', md: '2rem' },
             justifyContent: { xs: 'center', md: 'flex-start' },
+            opacity: 0, // start hidden
+            animation: `${slideInLeft} 1s ease-out forwards`,
+            animationDelay: '1.5s', // third element: slides in from left
           }}
         >
           <Link

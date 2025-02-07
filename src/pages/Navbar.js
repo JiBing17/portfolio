@@ -7,8 +7,21 @@ import PersonIcon from '@mui/icons-material/Person';
 import EditIcon from '@mui/icons-material/Edit';
 import WorkIcon from '@mui/icons-material/Work';
 import DescriptionIcon from '@mui/icons-material/Description';
+import { keyframes } from '@mui/system';
 
 const Navbar = () => {
+
+  // defined animation for nav btns slide down
+  const slideDown = keyframes`
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  `;
 
   // states used to keep track of visuals (hovering, active section, sidebar, mobile, etc.)
   const [activeSection, setActiveSection] = useState('');
@@ -108,7 +121,11 @@ const Navbar = () => {
         >
           <Link
             underline="none"
-            sx={getButtonStyle('home')}
+            sx={{...getButtonStyle('home'), 
+              opacity: 0,
+              animation: `${slideDown} 0.8s ease-out forwards`,
+              animationDelay: '1s',
+            }}
             onClick={() => scrollToSection('home')}
             onMouseEnter={() => setHoveredButton('home')}
             onMouseLeave={() => setHoveredButton(null)}
@@ -118,7 +135,12 @@ const Navbar = () => {
           </Link>
           <Link
             underline="none"
-            sx={getButtonStyle('about')}
+            sx={{
+              ...getButtonStyle('about'),
+              opacity: 0,
+              animation: `${slideDown} 0.8s ease-out forwards`,
+              animationDelay: '.8s',
+            }}
             onClick={() => scrollToSection('about')}
             onMouseEnter={() => setHoveredButton('about')}
             onMouseLeave={() => setHoveredButton(null)}
@@ -128,7 +150,12 @@ const Navbar = () => {
           </Link>
           <Link
             underline="none"
-            sx={getButtonStyle('skills')}
+            sx={{
+              ...getButtonStyle('skills'), 
+              opacity: 0,
+              animation: `${slideDown} 0.8s ease-out forwards`,
+              animationDelay: '0.6s',
+            }}
             onClick={() => scrollToSection('skills')}
             onMouseEnter={() => setHoveredButton('skills')}
             onMouseLeave={() => setHoveredButton(null)}
@@ -138,7 +165,12 @@ const Navbar = () => {
           </Link>
           <Link
             underline="none"
-            sx={getButtonStyle('projects')}
+            sx={{
+              ...getButtonStyle('projects'),
+              opacity: 0,
+              animation: `${slideDown} 0.8s ease-out forwards`,
+              animationDelay: '0.4s',
+            }}
             onClick={() => scrollToSection('projects')}
             onMouseEnter={() => setHoveredButton('projects')}
             onMouseLeave={() => setHoveredButton(null)}
@@ -148,7 +180,12 @@ const Navbar = () => {
           </Link>
           <Link
             underline="none"
-            sx={getButtonStyle('resume')}
+            sx={{
+              ...getButtonStyle('resume'),
+              opacity: 0,
+              animation: `${slideDown} 0.8s ease-out forwards`,
+              animationDelay: '0.2s',
+            }}
             onClick={() => scrollToSection('resume')}
             onMouseEnter={() => setHoveredButton('resume')}
             onMouseLeave={() => setHoveredButton(null)}

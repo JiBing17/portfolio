@@ -49,8 +49,8 @@ const About = () => {
         py: { xs: '2rem', sm: '4rem' },
         backgroundColor: '#1a3d47',
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 2s ease-out, transform 1s ease-out',
+        transform: visible ? 'translateY(0)' : 'translateY(40px)',
+        transition: 'opacity 1.4s ease-out, transform 2s ease-out',
       }}
     >
       <Typography
