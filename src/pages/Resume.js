@@ -292,7 +292,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                Undergraduate Teaching Assistant - Undergraduate Student Board
+                Undergraduate Teaching Assistant
               </Typography>
               <Typography
                 variant="body1"
@@ -383,17 +383,19 @@ const Resume = () => {
                   fontSize: { xs: '0.95rem', md: '1rem' },
                 }}
               >
+
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Developed an AI-powered chatbot for Wabash, reducing reliance on call center agents
+                  Developed an AI-powered chatbot for Wabash, integrating a trained machine learning model to deliver
+                  more precise customer responses, reducing reliance on call center agents
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Trained a machine learning model, resulting in more precise responses for customers
+                  Implemented a user-friendly React interface, improving chatbot efficiency and user experience across 20+ devices
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Implemented a user-friendly React interface, improving chatbot efficency and user experience
+                  Created 5+ test cases using Pytest, ensuring chatbot accuracy and robustness through automated testing
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Collaborated in a team of 8, applying Agile practices via Azure DevOps to enhance efficiency
+                  Collaborated in a team of 8, applying Agile practices via Azure DevOps to enhance project efficiency
                 </Typography>
               </Box>
             </Box>
@@ -452,10 +454,11 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Led 1-on-1 tutoring sessions for Python, strengthening their programming skills
+                  Conducted 20+ tutoring sessions for Python Programming, improving student’s programming skills
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Held office hours for Systems and Competitive Programming, clarifying complex concepts
+                  Led 15+ office hours for Systems and Competitive Programming, breaking down complex concepts into clear
+                  explanations to improve student comprehension
                 </Typography>
               </Box>
             </Box>
@@ -491,7 +494,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                Undergraduate Teaching Assistant - Tools
+                Undergraduate Teaching Assistant
               </Typography>
               <Typography
                 variant="body1"
@@ -580,11 +583,13 @@ const Resume = () => {
                   fontSize: { xs: '0.95rem', md: '1rem' },
                 }}
               >
+                
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Developed a landing page with HTML, CSS, and JavaScript for ECELabs.io, attracting new users
+                  Developed an intuitive landing page using HTML, CSS, and JavaScript for ECELabs.io, featuring 10+ custom
+                  components and ensuring responsiveness across 20+ devices to enhance user engagement and attract new users
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Enhanced the ECELabs.io website by redesigning a modern homepage, improving user experience
+                  Revamped ECELabs.io homepage with a modern design, improving user experience for 450+ students
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
                   Collaborated in a software team of 5 to hold weekly meetings, maintaining remote access to hardware labs for
