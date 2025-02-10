@@ -263,72 +263,6 @@ const Resume = () => {
           </Typography>
 
 
-          {/* 1. Computer Vision & Machine Learning Research Assistant  */}
-          <Box display="flex">
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              position="relative"
-            >
-              <Box
-                width="16px"
-                height="16px"
-                border="2px solid #f76e65"
-                borderRadius="50%"
-                zIndex={10}
-                bgcolor="white"
-              />
-              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
-            </Box>
-            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
-              <Typography
-                variant="h4"
-                component="h4"
-                sx={{
-                  fontSize: { xs: '1rem', md: '1.1rem' },
-                  fontWeight: 'bold',
-                  color: '#f76e65',
-                }}
-              >
-                Computer Vision & Machine Learning Research Assistant 
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
-              >
-                January 2025 - Present
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
-              >
-                Purdue University, West Lafayette, IN
-              </Typography>
-              <Box
-                component="ul"
-                sx={{
-                  listStyleType: 'disc',
-                  listStylePosition: 'inside',
-                  mt: 2,
-                  pl: 2,
-                  fontSize: { xs: '0.95rem', md: '1rem' },
-                }}
-              >
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Trained RTMPose models using OpenMMLab on AP-10K dataset with 10,015 images across 23 species,
-                  improving keypoint detection accuracy for animal behavior analysis
-                </Typography>
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Labeled keypoints to create a high-quality dataset, then optimized models in Python with PyTorch, leading to
-                  improved model performance
-                </Typography>
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Collaborated in a team of 9, delivering weekly presentations to showcase research findings
-                </Typography>
-              </Box>
-            </Box>
-          </Box>
           
           {/* 2. Undergraduate Teaching Assistant - Undergraduate Student Board */}
           <Box display="flex">
@@ -655,6 +589,74 @@ const Resume = () => {
                 <Typography sx={{ color: '#1a3d47' }} component="li">
                   Collaborated in a software team of 5 to hold weekly meetings, maintaining remote access to hardware labs for
                   450+ students
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+
+          {/* 5. Software Development Research Assistant */}
+          <Box display="flex">
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              position="relative"
+            >
+              <Box
+                width="16px"
+                height="16px"
+                border="2px solid #f76e65"
+                borderRadius="50%"
+                zIndex={10}
+                bgcolor="white"
+              />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
+            </Box>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
+              <Typography
+                variant="h4"
+                component="h4"
+                sx={{
+                  fontSize: { xs: '1rem', md: '1.1rem' },
+                  fontWeight: 'bold',
+                  color: '#f76e65',
+                }}
+              >
+                Student Software Developer
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
+              >
+                August 2024 - December 2024
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
+                Purdue University, West Lafayette, IN
+              </Typography>
+              <Box
+                component="ul"
+                sx={{
+                  listStyleType: 'disc',
+                  listStylePosition: 'inside',
+                  mt: 2,
+                  pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                }}
+              >
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Collaborated in a 6 member scrum team, delivering a client-server productivity management system that
+                  consisted of 70+ user stories                
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Engineered a full stack client-server application using React.js and CSS for front-end, Flask for backend, and
+                  SQLite for data management, allowing users to access and manage their schedule and tasks effectively
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Facilitated 27+ Scrum meetings that included Sprint Planning, Backlog, Stand-ups, Reviews, and Retrospectives
+                  by coordinating with scrum team, improving team efficiency
                 </Typography>
               </Box>
             </Box>
