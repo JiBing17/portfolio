@@ -15,12 +15,14 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
+import project1Main from '../icons/project-1-main.jpg'
 import project1 from '../icons/project-1.png'
 import project1_2 from '../icons/project-1-2.png'
 import project1_3 from '../icons/project-1-3.png'
 import project1_4 from '../icons/project-1-4.png'
 import project1_5 from '../icons/project-1-5.png'
 
+import project2Main from '../icons/project-2-main.jpg'
 import project2 from '../icons/project-2.png'
 import project2_2 from '../icons/project-2-2.png'
 import project2_3 from '../icons/project-2-3.png'
@@ -28,6 +30,7 @@ import project2_4 from '../icons/project-2-4.png'
 import project2_5 from '../icons/project-2-5.png'
 import project2_6 from '../icons/project-2-6.png'
 
+import project3Main from '../icons/project-3-main.jpg'
 import project3 from '../icons/project-3.png'
 import project3_2 from '../icons/project-3-2.png'
 import project3_3 from '../icons/project-3-3.png'
@@ -35,6 +38,7 @@ import project3_4 from '../icons/project-3-4.png'
 import project3_5 from '../icons/project-3-5.png'
 import project3_6 from '../icons/project-3-6.png'
 
+import project4Main from '../icons/project-4-main.jpg'
 
 import project4 from '../icons/project-4.png'
 import project4_2 from '../icons/project-4-2.png'
@@ -46,7 +50,7 @@ const projects = [
     title: 'PokeAPI',
     tools: ['React', 'Node.js', 'MongoDB', 'Express.js', 'TailwindCSS', 'MUI'],
     github: 'https://github.com/JiBing17/pokemonAPI',
-    pictures: [project1, project1_2, project1_3, project1_4, project1_5], 
+    pictures: [project1Main, project1, project1_2, project1_3, project1_4, project1_5], 
     description:
       'I developed a Pokémon MERN stack web application using PokeAPI, featuring secure user authentication, a responsive UI, and advanced Pokémon display with sorting, search, and pagination. Users can create accounts to manage favorites, while the backend handles the data with error handling.',
   },
@@ -54,7 +58,7 @@ const projects = [
     title: 'Landing Page for ECELabs.io',
     tools: ['HTML', 'CSS', 'Javascript'],
     github: 'https://github.com/JiBing17/ECELabs.io-Landing-Page',
-    pictures: [project2, project2_2, project2_3, project2_4, project2_5, project2_6],
+    pictures: [project2Main, project2, project2_2, project2_3, project2_4, project2_5, project2_6],
     description:
       'I developed an engaging landing page for the ECELabs.io website, aimed at attracting and expanding the user base by showcasing the platform’s capabilities.',
   },
@@ -62,7 +66,7 @@ const projects = [
     title: 'EvoPlan',
     tools: ['React', 'Flask', 'SQLAlchemy', 'Open-Meteo API', 'Google Geolocation API'],
     github: 'https://github.com/Z3yphr/CS307-Project',
-    pictures: [project3, project3_2, project3_3, project3_4, project3_5, project3_6],
+    pictures: [project3Main, project3, project3_2, project3_3, project3_4, project3_5, project3_6],
     description:
       'I collaborated in a six-member Scrum team, contributing to sprint planning, stand-ups, retrospectives, and backlog management, delivering 70+ high-value features. Engineered a client-server application using React.js for front-end, Flask for server-side development, SQLAlchemy for database, and integrated APIs like Weather API and Geolocation API for real-time functionality.',
   },
@@ -70,7 +74,7 @@ const projects = [
     title: 'Marketplace Messaging App',
     tools: ['Java', 'SObject-Oriented Programming (OOP)', 'Socket Programming', 'File I/O Operations', 'Data Structures'],
     github: 'https://github.com/Taconio/CS-180-Project5',
-    pictures: [project4, project4_2, project4_3],
+    pictures: [project4Main, project4, project4_2, project4_3],
     description:
       'I collaborated in a team of 5 to develop a messaging application for the CS180 cumulative final project. The app features account creation, real-time customer-seller messaging, user management, and message statistics, utilizing OOP, socket programming, and file I/O.',
   },
@@ -232,6 +236,7 @@ const Projects = () => {
               sx={{
                 position: 'relative',
                 overflow: 'hidden',
+                boxShadow: "0px 4px 10px rgba(255,255,255, .4)",
                 // Hover overlay & zoom effect
                 '&:hover .overlay': { opacity: 1 },
                 '&:hover .image': { transform: 'scale(1.1)' },
@@ -247,7 +252,7 @@ const Projects = () => {
                   // Responsive height
                   height: { xs: 180, md: 220 },
                   width: '100%',
-                  objectFit: 'contain',
+                  objectFit: 'fit',
                   className: 'image',
                 }}
               />
