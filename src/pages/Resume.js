@@ -292,6 +292,64 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
+                AI Music Research Assistant
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
+              >
+                January 2025 - Present
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://ai4musicians.org/vip_info.html" target="_blank">AIM - Purdue University</Link>, West Lafayette, IN
+              </Typography>
+              <Box
+                component="ul"
+                sx={{
+                  listStyleType: 'disc',
+                  listStylePosition: 'inside',
+                  mt: 2,
+                  pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                }}
+              >
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  IOS and Android app development with React Native
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+          {/* 2. Undergraduate Teaching Assistant - Undergraduate Student Board */}
+          <Box display="flex">
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              position="relative"
+            >
+              <Box
+                width="16px"
+                height="16px"
+                border="2px solid #f76e65"
+                borderRadius="50%"
+                zIndex={10}
+                bgcolor="white"
+              />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
+            </Box>
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
+              <Typography
+                variant="h4"
+                component="h4"
+                sx={{
+                  fontSize: { xs: '1rem', md: '1.1rem' },
+                  fontWeight: 'bold',
+                  color: '#f76e65',
+                }}
+              >
                 Undergraduate Teaching Assistant
               </Typography>
               <Typography
@@ -304,7 +362,7 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
               >
-                Purdue University, West Lafayette, IN
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://www.cs.purdue.edu/" target="_blank">Purdue University Department of Computer Science</Link>, West Lafayette, IN
               </Typography>
               <Box
                 component="ul"
@@ -371,7 +429,7 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
               >
-                Purdue University, West Lafayette, IN
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://datamine.purdue.edu/" target="_blank">The Data Mine - Purdue University</Link>, West Lafayette, IN
               </Typography>
               <Box
                 component="ul"
@@ -441,7 +499,7 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
               >
-                Purdue University, West Lafayette, IN
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://www.purdue.edu/horizons/" target="_blank">Horizons Student Support Services</Link>, West Lafayette, IN
               </Typography>
               <Box
                 component="ul"
@@ -506,8 +564,8 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
               >
-                Purdue University, West Lafayette, IN
-              </Typography>
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://www.cs.purdue.edu/" target="_blank">Purdue University Department of Computer Science</Link>, West Lafayette, IN
+                </Typography>
               <Box
                 component="ul"
                 sx={{
@@ -571,7 +629,7 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
               >
-                Purdue University, West Lafayette, IN
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://engineering.purdue.edu/VIP" target="_blank">Purdue Vertically Integrated Projects</Link>, West Lafayette, IN
               </Typography>
               <Box
                 component="ul"
