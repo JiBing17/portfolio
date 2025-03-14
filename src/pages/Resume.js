@@ -317,7 +317,15 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  IOS and Android app development with React Native
+                  Developed the frontend of an AI-driven music accompaniment app for iOS and Android using React
+                  Native and TypeScript, building 10+ components and enabling real-time AI adaptation to musicians’ playing
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Integrated OpenSheetMusicDisplay to render MIDI files and display musical notation, while currently
+                  developing cursor movement to track the AI Companion’s real-time position for synchronized playback
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Redesigned app by replacing client-server model with a TypeScript standalone frontend, reducing dependencies
                 </Typography>
               </Box>
             </Box>
