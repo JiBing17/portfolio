@@ -44,8 +44,33 @@ import project4 from '../icons/project-4.png'
 import project4_2 from '../icons/project-4-2.png'
 import project4_3 from '../icons/project-4-3.png'
 
+import project5Main from '../icons/project-5-main.jpg'
+import project5_1 from '../icons/project-5-1.png'
+import project5_2 from '../icons/project-5-2.png'
+import project5_3 from '../icons/project-5-3.png'
+import project5_4 from '../icons/project-5-4.png'
+import project5_5 from '../icons/project-5-5.png'
+import project5_6 from '../icons/project-5-6.png'
+import project5_7 from '../icons/project-5-7.png'
+import project5_8 from '../icons/project-5-8.png'
+import project5_9 from '../icons/project-5-9.png'
+import project5_10 from '../icons/project-5-10.png'
+import project5_11 from '../icons/project-5-11.png'
+import project5_12 from '../icons/project-5-12.png'
+import project5_13 from '../icons/project-5-13.png'
+import project5_14 from '../icons/project-5-14.png'
+
+
 // array of objects used to describe the projects that I have made and the info about each one of them
 const projects = [
+  {
+    title: 'BoilerFinds – Discover. Connect. Share.',
+    tools: ['ReactJS', 'Flask', 'PostgreSQL', 'Bootstrap', 'Leaflet', 'OpenStreetMap API', 'TMDB API'],
+    github: 'https://github.com/JiBing17/boilerFinds',
+    pictures: [project5Main, project5_1, project5_2, project5_3, project5_4, project5_5, project5_6, project5_7, project5_8, project5_9, project5_10, project5_11, project5_12, project5_13, project5_14],
+    description:
+      'A full-stack lifestyle web app that helps users discover local restaurants, explore trending movies, buy and sell items, and connect with friends. Features include user authentication, real-time messaging, geolocation-based food discovery, interactive maps, friend requests, and movie saving with TMDB integration.',
+  },
   {
     title: 'PokeAPI',
     tools: ['React', 'Node.js', 'MongoDB', 'Express.js', 'TailwindCSS', 'MUI'],
@@ -72,12 +97,13 @@ const projects = [
   },
   {
     title: 'Marketplace Messaging App',
-    tools: ['Java', 'SObject-Oriented Programming (OOP)', 'Socket Programming', 'File I/O Operations', 'Data Structures'],
+    tools: ['Java', 'Object-Oriented Programming (OOP)', 'Socket Programming', 'File I/O Operations', 'Data Structures'],
     github: 'https://github.com/Taconio/CS-180-Project5',
     pictures: [project4Main, project4, project4_2, project4_3],
     description:
       'I collaborated in a team of 5 to develop a messaging application for the CS180 cumulative final project. The app features account creation, real-time customer-seller messaging, user management, and message statistics, utilizing OOP, socket programming, and file I/O.',
-  },
+  }
+  
 ];
 
 const Projects = () => {
