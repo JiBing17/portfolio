@@ -306,13 +306,13 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
-                June 2025 - Present
+                January 2025 - August 2025
               </Typography>
               <Typography
                 variant="body1"
                 sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
               >
-                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://www.cs.purdue.edu/" target="_blank">Purdue University Department of Computer Science</Link>, West Lafayette, IN
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://ai4musicians.org/vip_info.html" target="_blank">AIM - Purdue University</Link>, West Lafayette, IN
               </Typography>
               <Box
                 component="ul"
@@ -325,14 +325,13 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Led 30+ labs for 40+ students in Systems Programming, guiding C/C++ projects on custom shell
-                  interpreter, manual malloc implementation, Bash scripting, and multithreaded HTTP server development
+                  Developed a cross-platform frontend for a music evaluator app using React Native and TypeScript, building 4+ reusable components and leveraging the Expo Go app for real-device testing on iOS, Android, and web
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Held 20+ office hours supporting student development and debugging of C/C++ system-level projects
+                  Integrated OpenSheetMusicDisplay API with a Dynamic Time Warping algorithm to render MusicXML scores with dynamic cursor tracking, enabling real-time visual alignment between live audio and sheet music
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                   Collaborated with other TAs to grade labs & exams enhancing student comprehension through custom feedback
+                   Refactored the music evaluator app from a Flask-based client–server model to a fully serverless architecture in TypeScript and React Native, eliminating backend dependencies and reducing potential hosting costs
                 </Typography>
               </Box>
             </Box>
@@ -434,7 +433,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                USB CS Help Room Tutor 
+                CS USB Help Room Tutor 
               </Typography>
               <Typography
                 variant="body1"
@@ -507,7 +506,7 @@ const Resume = () => {
                   color: '#1a3d47',
                 }}
               >
-                August 2024 - May 2025
+                August 2024 - Present
               </Typography>
               <Typography
                 variant="body1"

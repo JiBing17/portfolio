@@ -61,9 +61,7 @@ import project5_13 from '../icons/project-5-13.png'
 import project5_14 from '../icons/project-5-14.png'
 
 import project6Main from '../icons/project-6-main.jpg'
-import project6_1 from '../icons/project-6-1.png'
-import project6_2 from '../icons/project-6-2.png'
-import project6_3 from '../icons/project-6-3.png'
+
 
 
 
@@ -73,7 +71,7 @@ const projects = [
     title: 'Evaluator Audio App',
     tools: ['React Native', 'Typescript', 'Expo Go', 'OpenSheetMusicDisplay API', 'Dynamic Time Warping Algorithm'],
     github: 'https://github.com/JiBing17/Evaluator-Audio-App',
-    pictures: [project6Main, project6_1, project6_2, project6_3],
+    pictures: [project6Main, project5_1, project5_2, project5_3, project5_4, project5_5, project5_6, project5_7, project5_8, project5_9, project5_10, project5_11, project5_12, project5_13, project5_14],
     description:
       'Your on-demand practice guide, allowing you to practice with score progress visualization and mistake detection anytime, anywhere.',
   },

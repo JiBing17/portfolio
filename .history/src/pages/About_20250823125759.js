@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Box, Typography, CardMedia } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import pfp from '../icons/pfp.jpg';
+import pfp from '../icons/pfp';
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -98,7 +98,7 @@ const About = () => {
           }}
         >
           Hello! 👋 My name is Ji Bing! I’m currently a Senior at Purdue University, studying
-          Computer Science. My current interests lie in,{' '} 
+          Computer Science 💻. My current interests lie in,{' '} 
           <strong className="text-coral">software engineering</strong>, 
           <strong className="text-coral"> databases</strong>,
           <strong className="text-coral"> web development</strong>, 

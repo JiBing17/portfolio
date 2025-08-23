@@ -312,7 +312,7 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
               >
-                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://www.cs.purdue.edu/" target="_blank">Purdue University Department of Computer Science</Link>, West Lafayette, IN
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://ai4musicians.org/vip_info.html" target="_blank">AIM - Purdue University</Link>, West Lafayette, IN
               </Typography>
               <Box
                 component="ul"
@@ -434,7 +434,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                USB CS Help Room Tutor 
+                CS USB Help Room Tutor 
               </Typography>
               <Typography
                 variant="body1"
@@ -507,7 +507,7 @@ const Resume = () => {
                   color: '#1a3d47',
                 }}
               >
-                August 2024 - May 2025
+                August 2024 - Present
               </Typography>
               <Typography
                 variant="body1"

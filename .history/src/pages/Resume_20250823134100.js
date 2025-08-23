@@ -434,7 +434,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                USB CS Help Room Tutor 
+                CS USB Help Room Tutor 
               </Typography>
               <Typography
                 variant="body1"
@@ -507,7 +507,7 @@ const Resume = () => {
                   color: '#1a3d47',
                 }}
               >
-                August 2024 - May 2025
+                August 2024 - Present
               </Typography>
               <Typography
                 variant="body1"

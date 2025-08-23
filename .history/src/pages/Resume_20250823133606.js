@@ -270,77 +270,10 @@ const Resume = () => {
           >
             💻 Professional Experience
           </Typography>
-          {/* 2. Undergraduate Student Board */}
-          <Box display="flex">
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              position="relative"
-            >
-              <Box
-                width="16px"
-                height="16px"
-                border="2px solid #f76e65"
-                borderRadius="50%"
-                zIndex={10}
-                bgcolor="white"
-              />
-              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
-            </Box>
-
-            
-            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
-              <Typography
-                variant="h4"
-                component="h4"
-                sx={{
-                  fontSize: { xs: '1rem', md: '1.1rem' },
-                  fontWeight: 'bold',
-                  color: '#f76e65',
-                }}
-              >
-                Systems Programming Teaching Assistant
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
-              >
-                June 2025 - Present
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
-              >
-                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://www.cs.purdue.edu/" target="_blank">Purdue University Department of Computer Science</Link>, West Lafayette, IN
-              </Typography>
-              <Box
-                component="ul"
-                sx={{
-                  listStyleType: 'disc',
-                  listStylePosition: 'inside',
-                  mt: 2,
-                  pl: 2,
-                  fontSize: { xs: '0.95rem', md: '1rem' },
-                }}
-              >
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Led 30+ labs for 40+ students in Systems Programming, guiding C/C++ projects on custom shell
-                  interpreter, manual malloc implementation, Bash scripting, and multithreaded HTTP server development
-                </Typography>
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Held 20+ office hours supporting student development and debugging of C/C++ system-level projects
-                </Typography>
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                   Collaborated with other TAs to grade labs & exams enhancing student comprehension through custom feedback
-                </Typography>
-              </Box>
-            </Box>
-          </Box>
 
 
           
-          {/* 2. Undergraduate Student Board */}
+          {/* 2. Undergraduate Teaching Assistant - Undergraduate Student Board */}
           <Box display="flex">
             <Box
               display="flex"
@@ -358,8 +291,6 @@ const Resume = () => {
               />
               <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-
-
             <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
               <Typography
                 variant="h4"
@@ -434,7 +365,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                USB CS Help Room Tutor 
+                CS USB Help Room Tutor 
               </Typography>
               <Typography
                 variant="body1"
@@ -507,7 +438,7 @@ const Resume = () => {
                   color: '#1a3d47',
                 }}
               >
-                August 2024 - May 2025
+                August 2024 - Present
               </Typography>
               <Typography
                 variant="body1"

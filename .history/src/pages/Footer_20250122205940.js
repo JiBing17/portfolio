@@ -146,7 +146,7 @@ const Footer = () => {
             fontSize: { xs: '0.85rem', md: '1rem' },
           }}
         >
-          Last Updated: August 2025
+          Last Updated: January 2025
         </Typography>
       </Box>
     </Box>

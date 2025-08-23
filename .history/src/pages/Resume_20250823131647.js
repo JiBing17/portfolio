@@ -229,12 +229,6 @@ const Resume = () => {
                   CS 30700 - Software Engineering I
                 </Typography>
                 <Typography component="li" sx={{ color: '#1a3d47' }}>
-                  CS 34800 - Information Systems
-                </Typography>
-                <Typography component="li" sx={{ color: '#1a3d47' }}>
-                  CS 35400 - Operating Systems
-                </Typography>
-                <Typography component="li" sx={{ color: '#1a3d47' }}>
                   CS 38100 - Introduction to the Analysis of Algorithms
                 </Typography>
                 <Typography component="li" sx={{ color: '#1a3d47' }}>
@@ -270,77 +264,10 @@ const Resume = () => {
           >
             💻 Professional Experience
           </Typography>
-          {/* 2. Undergraduate Student Board */}
-          <Box display="flex">
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              position="relative"
-            >
-              <Box
-                width="16px"
-                height="16px"
-                border="2px solid #f76e65"
-                borderRadius="50%"
-                zIndex={10}
-                bgcolor="white"
-              />
-              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
-            </Box>
-
-            
-            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
-              <Typography
-                variant="h4"
-                component="h4"
-                sx={{
-                  fontSize: { xs: '1rem', md: '1.1rem' },
-                  fontWeight: 'bold',
-                  color: '#f76e65',
-                }}
-              >
-                Systems Programming Teaching Assistant
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
-              >
-                June 2025 - Present
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
-              >
-                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://www.cs.purdue.edu/" target="_blank">Purdue University Department of Computer Science</Link>, West Lafayette, IN
-              </Typography>
-              <Box
-                component="ul"
-                sx={{
-                  listStyleType: 'disc',
-                  listStylePosition: 'inside',
-                  mt: 2,
-                  pl: 2,
-                  fontSize: { xs: '0.95rem', md: '1rem' },
-                }}
-              >
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Led 30+ labs for 40+ students in Systems Programming, guiding C/C++ projects on custom shell
-                  interpreter, manual malloc implementation, Bash scripting, and multithreaded HTTP server development
-                </Typography>
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Held 20+ office hours supporting student development and debugging of C/C++ system-level projects
-                </Typography>
-                <Typography sx={{ color: '#1a3d47' }} component="li">
-                   Collaborated with other TAs to grade labs & exams enhancing student comprehension through custom feedback
-                </Typography>
-              </Box>
-            </Box>
-          </Box>
 
 
           
-          {/* 2. Undergraduate Student Board */}
+          {/* 2. Undergraduate Teaching Assistant - Undergraduate Student Board */}
           <Box display="flex">
             <Box
               display="flex"
@@ -358,8 +285,6 @@ const Resume = () => {
               />
               <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
             </Box>
-
-
             <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
               <Typography
                 variant="h4"
@@ -370,13 +295,13 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                Music Software Development Resesarch Assistant
+                AI Music Research Assistant
               </Typography>
               <Typography
                 variant="body1"
                 sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
-                January 2025 - August 2025
+                January 2025 - Present
               </Typography>
               <Typography
                 variant="body1"
@@ -395,18 +320,20 @@ const Resume = () => {
                 }}
               >
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Developed a cross-platform frontend for a music evaluator app using React Native and TypeScript, building 4+ reusable components and leveraging the Expo Go app for real-device testing on iOS, Android, and web
+                  Developed the frontend of an AI-driven music accompaniment app for iOS and Android using React
+                  Native and TypeScript, building 10+ components and enabling real-time AI adaptation to musicians’ playing
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                  Integrated OpenSheetMusicDisplay API with a Dynamic Time Warping algorithm to render MusicXML scores with dynamic cursor tracking, enabling real-time visual alignment between live audio and sheet music
+                  Integrated OpenSheetMusicDisplay to render MIDI files and display musical notation, while currently
+                  developing cursor movement to track the AI Companion’s real-time position for synchronized playback
                 </Typography>
                 <Typography sx={{ color: '#1a3d47' }} component="li">
-                   Refactored the music evaluator app from a Flask-based client–server model to a fully serverless architecture in TypeScript and React Native, eliminating backend dependencies and reducing potential hosting costs
+                  Redesigned app by replacing client-server model with a TypeScript standalone frontend, reducing dependencies
                 </Typography>
               </Box>
             </Box>
           </Box>
-          {/* 2. CS USB Help Room Tutor - Undergraduate Student Board */}
+          {/* 2. Undergraduate Teaching Assistant - Undergraduate Student Board */}
           <Box display="flex">
             <Box
               display="flex"
@@ -434,13 +361,13 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                USB CS Help Room Tutor 
+                Undergraduate Teaching Assistant
               </Typography>
               <Typography
                 variant="body1"
                 sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
-                January 2025 - May 2025
+                January 2025 - Present
               </Typography>
               <Typography
                 variant="body1"
@@ -507,7 +434,7 @@ const Resume = () => {
                   color: '#1a3d47',
                 }}
               >
-                August 2024 - May 2025
+                August 2024 - Present
               </Typography>
               <Typography
                 variant="body1"
@@ -577,7 +504,7 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
-                August 2024 - May 2025
+                August 2024 - Present
               </Typography>
               <Typography
                 variant="body1"
@@ -636,7 +563,7 @@ const Resume = () => {
                   color: '#f76e65',
                 }}
               >
-                Developer Tools Teaching Assistant
+                Undergraduate Teaching Assistant
               </Typography>
               <Typography
                 variant="body1"

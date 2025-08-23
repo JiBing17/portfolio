@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Box, Typography, CardMedia } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import pfp from '../icons/pfp.jpg';
+import pfp from '../icons/IMG_7595.JPEG';
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -98,7 +98,7 @@ const About = () => {
           }}
         >
           Hello! 👋 My name is Ji Bing! I’m currently a Senior at Purdue University, studying
-          Computer Science. My current interests lie in,{' '} 
+          Computer Science 💻. My current interests lie in,{' '} 
           <strong className="text-coral">software engineering</strong>, 
           <strong className="text-coral"> databases</strong>,
           <strong className="text-coral"> web development</strong>, 
@@ -253,17 +253,11 @@ const About = () => {
                 students using <strong className="text-coral"> HTML, CSS, and JavaScript</strong>.
               </Typography>
 
-              <Typography
-                sx={{
-                  margin: '.5rem 0',
-                  color: 'white',
-                  fontSize: { xs: '0.8rem', sm: '.9rem', md: '1rem' },
-                  textAlign: { xs: 'center', sm: 'left' },
-                }}
-              >
-                Outside of tech, I enjoy staying active with <strong className="text-coral">cardio</strong>, 
-                exploring and enjoying <strong className="text-coral"> good food</strong>, and watching 
-                <strong className="text-coral"> movies/shows</strong>.
+              <Typography sx={{ margin: '.5rem 0', color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, textAlign: {xs: 'center', sm: 'left'} }}>
+
+                Outside of tech, I enjoy staying active with <strong className="text-coral">cardio</strong>, watching{' '}
+                <strong className="text-coral">movies/shows</strong>, playing <strong className="text-coral">video games</strong>, and expressing
+                creativity through <strong className="text-coral">drawing</strong>.
               </Typography>
             </Box>
           </Box>

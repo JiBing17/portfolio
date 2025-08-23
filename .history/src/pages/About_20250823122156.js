@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Box, Typography, CardMedia } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import pfp from '../icons/pfp.jpg';
+import pfp from '../icons/IMG_7595.JPEG';
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -98,7 +98,7 @@ const About = () => {
           }}
         >
           Hello! 👋 My name is Ji Bing! I’m currently a Senior at Purdue University, studying
-          Computer Science. My current interests lie in,{' '} 
+          Computer Science 💻. My current interests lie in,{' '} 
           <strong className="text-coral">software engineering</strong>, 
           <strong className="text-coral"> databases</strong>,
           <strong className="text-coral"> web development</strong>, 
@@ -242,28 +242,29 @@ const About = () => {
                 }}
               >
                 Some of my work-related experience includes serving as a
-                <strong className="text-coral"> Music Software Development Research Assistant</strong>,
-                where I built a cross-platform music evaluator app with
-                <strong className="text-coral"> React Native</strong> and
-                <strong className="text-coral"> TypeScript</strong>. I also developed an
-                AI-powered chatbot for <strong className="text-coral"> Wabash National&apos;s</strong>{' '}
-                website to reduce reliance on call centers, and redesigned the
+                <strong className="text-coral"> Music Software Development Research Assistant</strong> 
+                , where I built a cross-platform frontend for a music
+                evaluator app using <strong className="text-coral">React Native</strong> and
+                <strong className="text-coral">TypeScript</strong>, integrated the
+                <strong className="text-coral"> OpenSheetMusicDisplay API</strong> with a
+                Dynamic Time Warping algorithm for real-time audio-to-score alignment, and
+                refactored the app into a fully serverless architecture to cut backend
+                dependencies and hosting costs. I also created an AI-powered chatbot for
+                <strong className="text-coral"> Wabash National&apos;s</strong> website to
+                reduce reliance on call center agents, and revamped the
                 <strong className="text-coral"> ECELabs.io</strong> homepage and landing page,
                 improving the experience for over <strong className="text-coral">450</strong>{' '}
-                students using <strong className="text-coral"> HTML, CSS, and JavaScript</strong>.
+                students and attracting new users with modern web design using
+                <strong className="text-coral"> HTML, CSS, and JavaScript</strong>.
               </Typography>
 
-              <Typography
-                sx={{
-                  margin: '.5rem 0',
-                  color: 'white',
-                  fontSize: { xs: '0.8rem', sm: '.9rem', md: '1rem' },
-                  textAlign: { xs: 'center', sm: 'left' },
-                }}
-              >
-                Outside of tech, I enjoy staying active with <strong className="text-coral">cardio</strong>, 
-                exploring and enjoying <strong className="text-coral"> good food</strong>, and watching 
-                <strong className="text-coral"> movies/shows</strong>.
+
+              <Typography sx={{ margin: '.5rem 0', color: 'white', fontSize: {xs: '0.8rem', sm: '.9rem', md: '1rem'}, textAlign: {xs: 'center', sm: 'left'} }}>
+
+                Outside of tech, I enjoy staying active with <strong className="text-coral">cardio</strong>, watching{' '}
+                <strong className="text-coral">movies/shows</strong>, playing <strong className="text-coral">video games</strong>, and expressing
+                creativity through <strong className="text-coral">drawing</strong>. This year, I’m also exploring new
+                hobbies, such as <strong className="text-coral">card collecting</strong>.
               </Typography>
             </Box>
           </Box>
