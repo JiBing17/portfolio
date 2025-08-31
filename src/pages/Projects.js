@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import {
   Box,
   Typography,
@@ -167,20 +167,20 @@ const Projects = () => {
 
   // Move to the previous image in the array
   const handlePrevImage = () => {
-    if (!selectedProject) return;
-    setCurrentImageIndex((prevIndex) => {
-      // For a wrap-around effect, use modulo
-      return (prevIndex - 1 + selectedProject.pictures.length) % selectedProject.pictures.length;
-    });
+    if (!modalPictures.length) return;
+    setCurrentImageIndex((prev) => (prev - 1 + modalPictures.length) % modalPictures.length);
   };
 
   // Move to the next image in the array
   const handleNextImage = () => {
-    if (!selectedProject) return;
-    setCurrentImageIndex((prevIndex) => {
-      return (prevIndex + 1) % selectedProject.pictures.length;
-    });
+    if (!modalPictures.length) return;
+    setCurrentImageIndex((prev) => (prev + 1) % modalPictures.length);
   };
+
+  const modalPictures = useMemo(
+    () => (selectedProject ? selectedProject.pictures.slice(1) : []),
+    [selectedProject]
+  );
 
   return (
     <Box
@@ -398,7 +398,7 @@ const Projects = () => {
                 sx={{
                   width: '100%',
                   height: '100%',
-                  backgroundImage: `url(${selectedProject.pictures[currentImageIndex]})`,
+                  backgroundImage: modalPictures.length? `url(${modalPictures[currentImageIndex]})`: 'none',
                   backgroundSize: 'contain',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
