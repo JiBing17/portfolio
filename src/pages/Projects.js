@@ -21,6 +21,12 @@ import project1_2 from '../icons/project-1-2.png'
 import project1_3 from '../icons/project-1-3.png'
 import project1_4 from '../icons/project-1-4.png'
 import project1_5 from '../icons/project-1-5.png'
+import project1_6 from '../icons/project-1-6.png'
+import project1_7 from '../icons/project-1-7.png'
+import project1_8 from '../icons/project-1-8.png'
+import project1_9 from '../icons/project-1-9.png'
+import project1_10 from '../icons/project-1-10.png'
+import project1_11 from '../icons/project-1-11.png'
 
 import project2Main from '../icons/project-2-main.jpg'
 import project2 from '../icons/project-2.png'
@@ -78,20 +84,20 @@ const projects = [
       'Your on-demand practice guide, allowing you to practice with score progress visualization and mistake detection anytime, anywhere.',
   },
   {
+    title: 'PokeWorld',
+    tools: ['React', 'Node.js', 'MongoDB', 'Express.js', 'TailwindCSS', 'MUI'],
+    github: 'https://github.com/JiBing17/pokemonAPI',
+    pictures: [project1Main, project1, project1_2, project1_3, project1_4, project1_5, project1_6, project1_7, project1_8, project1_9, project1_10, project1_11], 
+    description:
+      'I developed a Pokémon MERN stack web application using PokeAPI, featuring secure user authentication, a responsive UI, and advanced Pokémon display with sorting, search, and pagination. Users can create accounts to manage favorites, while the backend handles the data with error handling.',
+  },
+  {
     title: 'BoilerFinds – Discover. Connect. Share.',
     tools: ['ReactJS', 'Flask', 'PostgreSQL', 'Bootstrap', 'Leaflet', 'OpenStreetMap API', 'TMDB API'],
     github: 'https://github.com/JiBing17/boilerFinds',
     pictures: [project5Main, project5_1, project5_2, project5_3, project5_4, project5_5, project5_6, project5_7, project5_8, project5_9, project5_10, project5_11, project5_12, project5_13, project5_14],
     description:
       'A full-stack lifestyle web app that helps users discover local restaurants, explore trending movies, buy and sell items, and connect with friends. Features include user authentication, real-time messaging, geolocation-based food discovery, interactive maps, friend requests, and movie saving with TMDB integration.',
-  },
-  {
-    title: 'PokeAPI',
-    tools: ['React', 'Node.js', 'MongoDB', 'Express.js', 'TailwindCSS', 'MUI'],
-    github: 'https://github.com/JiBing17/pokemonAPI',
-    pictures: [project1Main, project1, project1_2, project1_3, project1_4, project1_5], 
-    description:
-      'I developed a Pokémon MERN stack web application using PokeAPI, featuring secure user authentication, a responsive UI, and advanced Pokémon display with sorting, search, and pagination. Users can create accounts to manage favorites, while the backend handles the data with error handling.',
   },
   {
     title: 'Landing Page for ECELabs.io',
