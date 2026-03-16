@@ -241,6 +241,9 @@ const Resume = () => {
                   CS 40700 - Software Engineering Senior Project
                 </Typography>
                 <Typography component="li" sx={{ color: '#1a3d47' }}>
+                  CS 40800 - Software Testing
+                </Typography>
+                <Typography component="li" sx={{ color: '#1a3d47' }}>
                   CS 47500 - Human and Computer Interaction
                 </Typography>
               </Box>
@@ -270,6 +273,73 @@ const Resume = () => {
           >
             💻 Professional Experience
           </Typography>
+          {/* Software Developer VIP */}
+          <Box display="flex">
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              position="relative"
+            >
+              <Box
+                width="16px"
+                height="16px"
+                border="2px solid #f76e65"
+                borderRadius="50%"
+                zIndex={10}
+                bgcolor="white"
+              />
+              <Box width="2px" bgcolor="#f76e65" flexGrow={1} />
+            </Box>
+
+            
+            <Box sx={{ padding: '0 1rem 1rem 1rem' }}>
+              <Typography
+                variant="h4"
+                component="h4"
+                sx={{
+                  fontSize: { xs: '1rem', md: '1.1rem' },
+                  fontWeight: 'bold',
+                  color: '#f76e65',
+                }}
+              >
+                Software Developer
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
+              >
+                January 2026 - Present
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ fontStyle: 'italic', mt: 1, color: '#1a3d47' }}
+              >
+                <Link sx={{color: '#f76e65', textDecoration: "none"}} href="https://dev.timescalecreator.org/" target="_blank">TimeScale Creator - Purdue Vertically Integrated Projects</Link>, West Lafayette, IN
+              </Typography>
+              <Box
+                component="ul"
+                sx={{
+                  listStyleType: 'disc',
+                  listStylePosition: 'inside',
+                  mt: 2,
+                  pl: 2,
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                }}
+              >
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Enabled secure MCP server access by implementing token-based authentication on HTTP/SSE calls
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Extended geoscience AI assistant with account-linked actions through web-authenticated MCP sessions
+                </Typography>
+                <Typography sx={{ color: '#1a3d47' }} component="li">
+                  Improved MCP server reliability by expanding test coverage between Fastify server and MCP server
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+
           {/* 2. Undergraduate Student Board */}
           <Box display="flex">
             <Box
