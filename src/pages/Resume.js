@@ -87,11 +87,11 @@ const Resume = () => {
       <Typography sx={{ textAlign: "center"}}>
           A brief list of things that I've been doing. You can view my official resume{' '}
           <Link
-            href={`${process.env.PUBLIC_URL}/resume_2025.pdf`} target="_blank" rel="noopener noreferrer"
+            href={`${process.env.PUBLIC_URL}/resume_2026.pdf`} target="_blank" rel="noopener noreferrer"
             sx={{color: "#f76e65", textDecoration: "none"}}
           >
             here
-          </Link> 
+          </Link>
       </Typography>
 
       <Grid
