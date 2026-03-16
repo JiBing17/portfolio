@@ -241,7 +241,11 @@ const About = () => {
                   textAlign: { xs: 'center', sm: 'left' },
                 }}
               >
-                Some of my work-related experience includes serving as a
+                 I currently work as a
+                <strong className="text-coral"> Software Developer</strong> on
+                <strong className="text-coral"> TimeScale Creator</strong>, where I help build secure 
+                <strong className="text-coral"> MCP server</strong> infrastructure for authenticated <strong className="text-coral">geoscience AI assistant</strong>. In addition,
+                some of my work-related experience includes serving as a
                 <strong className="text-coral"> Music Software Development Research Assistant</strong>,
                 where I built a cross-platform music evaluator app with
                 <strong className="text-coral"> React Native</strong> and
