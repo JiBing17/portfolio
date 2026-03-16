@@ -16,6 +16,8 @@ const Skills = () => {
     { name: 'TypeScript', icon: 'devicon-typescript-plain', color: '#3178C6' },
     { name: 'React', icon: 'devicon-react-original', color: '#61DAFB' },
     { name: 'React Native', icon: 'devicon-react-original', color: '#0A7EA4' },
+    { name: 'Angular', icon: 'devicon-angularjs-plain', color: '#DD0031' },
+    { name: 'Docker', icon: 'devicon-docker-plain', color: '#2496ED' },
     { name: 'Node.js', icon: 'devicon-nodejs-plain', color: '#339933' },
     { name: 'Express.js', icon: 'devicon-express-original', color: '#000000' },
     { name: 'Flask', icon: 'devicon-flask-original', color: '#000000' },
