@@ -170,7 +170,7 @@ const Resume = () => {
                   color: '#1a3d47',
                 }}
               >
-                2022-2026 (Expected)
+                2022-2026
               </Typography>
               <Typography
                 variant="body1"
@@ -376,7 +376,7 @@ const Resume = () => {
                 variant="body1"
                 sx={{ fontStyle: 'italic', fontWeight: 'bold', mt: 1, color: '#1a3d47' }}
               >
-                June 2025 - Present
+                June 2025 - May 2026
               </Typography>
               <Typography
                 variant="body1"

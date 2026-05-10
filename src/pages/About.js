@@ -97,12 +97,12 @@ const About = () => {
             margin: "1rem 0"
           }}
         >
-          Hello! 👋 My name is Ji Bing! I’m currently a Senior at Purdue University, studying
-          Computer Science. My current interests lie in,{' '} 
-          <strong className="text-coral">software engineering</strong>, 
-          <strong className="text-coral"> databases</strong>,
-          <strong className="text-coral"> web development</strong>, 
-          and <strong className="text-coral">mobile app development</strong>.
+          Hello, my name is Ji Bing! I'm a recent Purdue CS graduate interested in{' '}
+        <strong className="text-coral">software engineering</strong>, 
+        <strong className="text-coral"> AI/LLM applications</strong>, 
+        <strong className="text-coral"> full-stack development</strong>,
+        and<strong className="text-coral"> databases</strong>.
+
         </Typography>
 
         <Box
@@ -266,8 +266,8 @@ const About = () => {
                 }}
               >
                 Outside of tech, I enjoy staying active with <strong className="text-coral">cardio</strong>, 
-                exploring and enjoying <strong className="text-coral"> good food</strong>, and watching 
-                <strong className="text-coral"> movies/shows</strong>.
+                exploring and enjoying <strong className="text-coral"> good food</strong>, and watching well put together
+                <strong className="text-coral"> movies/shows!</strong>.
               </Typography>
             </Box>
           </Box>
