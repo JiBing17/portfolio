@@ -1,0 +1,67 @@
+export const profile = {
+  name: 'Ji Bing Ni',
+  shortName: 'Ji Bing',
+  title: 'Software Engineer',
+  tagline: 'Purdue CS Graduate · Full-Stack · AI/LLM',
+  email: 'jibingni17@gmail.com',
+  location: 'Indianapolis, IN',
+  university: 'Purdue University',
+  major: 'Computer Science',
+  resumeUrl: `${process.env.PUBLIC_URL}/resume_2026.pdf`,
+  socials: [
+    { label: 'GitHub', href: 'https://github.com/JiBing17', icon: 'github' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jibing-ni/', icon: 'linkedin' },
+    { label: 'Instagram', href: 'https://www.instagram.com/calmly4u/', icon: 'instagram' },
+  ],
+  typewriterRoles: [
+    'Software Engineer',
+    'Full-Stack Developer',
+    'CS @ Purdue Alum',
+    'Problem Solver',
+    'Learner',
+  ],
+  intro:
+    "Purdue CS graduate based in Indianapolis, IN.",
+  interests: [
+    'Software Engineering',
+    'AI/LLM Applications',
+    'Full-Stack Development',
+    'Databases',
+  ],
+  aboutParagraphs: [
+    {
+      text: 'My academic journey includes roles as an Undergraduate Teaching Assistant for Systems Programming and Developer Tools, and as a CS Help Room Tutor for Object-Oriented Programming and C Programming. I also served as a CS tutor for Horizons, offering 1-on-1 sessions for Python programming.',
+      highlights: [
+        'Undergraduate Teaching Assistant',
+        'Systems Programming',
+        'Developer Tools',
+        'CS Help Room Tutor',
+        'Object-Oriented Programming',
+        'C Programming',
+        'CS tutor',
+        'Horizons',
+        'Python programming',
+      ],
+    },
+    {
+      text: 'I currently work as a Software Developer on TimeScale Creator, where I help build secure MCP server infrastructure for authenticated geoscience AI assistant. Some of my work-related experience includes serving as a Music Software Development Research Assistant, where I built a cross-platform music evaluator app with React Native and TypeScript. I also developed an AI-powered chatbot for Wabash National\'s website to reduce reliance on call centers, and redesigned the ECELabs.io homepage and landing page, improving the experience for over 450 students using HTML, CSS, and JavaScript.',
+      highlights: [
+        'Software Developer',
+        'TimeScale Creator',
+        'MCP server',
+        'geoscience AI assistant',
+        'Music Software Development Research Assistant',
+        'React Native',
+        'TypeScript',
+        "Wabash National's",
+        'ECELabs.io',
+        '450',
+        'HTML, CSS, and JavaScript',
+      ],
+    },
+    {
+      text: 'Outside of tech, I enjoy staying active with cardio, exploring and enjoying good food, and watching well put together movies/shows!',
+      highlights: ['cardio', 'good food', 'movies/shows!'],
+    },
+  ],
+};

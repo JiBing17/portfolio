@@ -1,30 +1,32 @@
-import './App.css';
 import './index.css';
 
-import { Box } from '@mui/material';
+import { ThemeProvider } from './context/ThemeContext';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
-import Navbar from './pages/Navbar'
-import Hero from './pages/Hero';
-import About from './pages/About';
-import Resume from './pages/Resume'
-import Skills from './pages/Skills'
-import Projects from './pages/Projects';
-import Footer from './pages/Footer';
-import BackToTop from './pages/BackToTop';
 function App() {
   return (
-    <>
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <Skills/>
-      <Projects/>
-      <Resume/>
-      <Footer/>
-      <BackToTop/>
-    </>
+    <ThemeProvider>
+      <div className="min-h-screen bg-paper text-ink transition-colors duration-300">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+        </main>
+        <Footer />
+        <BackToTop />
+      </div>
+    </ThemeProvider>
   );
 }
-
 
 export default App;
