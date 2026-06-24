@@ -1,15 +1,13 @@
 import project1Main from '../icons/project-1-main.jpg';
-import project1 from '../icons/project-1.png';
-import project1_2 from '../icons/project-1-2.png';
-import project1_3 from '../icons/project-1-3.png';
-import project1_4 from '../icons/project-1-4.png';
-import project1_5 from '../icons/project-1-5.png';
-import project1_6 from '../icons/project-1-6.png';
-import project1_7 from '../icons/project-1-7.png';
-import project1_8 from '../icons/project-1-8.png';
-import project1_9 from '../icons/project-1-9.png';
-import project1_10 from '../icons/project-1-10.png';
-import project1_11 from '../icons/project-1-11.png';
+import pokeworld_1 from '../icons/pokeworld_1.png';
+import pokeworld_2 from '../icons/pokeworld_2.png';
+import pokeworld_3 from '../icons/pokeworld_3.png';
+import pokeworld_4 from '../icons/pokeworld_4.png';
+import pokeworld_5 from '../icons/pokeworld_5.png';
+import pokeworld_6 from '../icons/pokeworld_6.png';
+import pokeworld_7 from '../icons/pokeworld_7.png';
+import pokeworld_8 from '../icons/pokeworld_8.png';
+import pokeworld_9 from '../icons/pokeworld_9.png';
 
 import project2Main from '../icons/project-2-main.jpg';
 import project2 from '../icons/project-2.png';
@@ -71,6 +69,15 @@ export const projects = [
       'TimeScale Creator is an advanced online cloud service designed to help you explore and visualize the geologic time scale with ease. With access to a vast internal database of over 20,000 global and regional events—including biologic, geomagnetic, sea-level, and stable isotope data—TimeScale Creator is the ultimate tool for researchers, educators, and enthusiasts of Earth history.',
   },
   {
+    title: 'PokeWorld',
+    tools: ['React', 'Express.js', 'Node.js', 'MongoDB', 'TailwindCSS', 'Material-UI', 'REST APIs', 'Google OAuth', 'Google Gemini'],
+    link: 'https://pokeworld-lime.vercel.app/',
+    linkLabel: 'Visit Site',
+    pictures: [project1Main, pokeworld_1, pokeworld_2, pokeworld_3, pokeworld_4, pokeworld_5, pokeworld_6, pokeworld_7, pokeworld_8, pokeworld_9],
+    description:
+      'An interactive Pokémon fan platform built as a full-stack MERN app, pulling from PokeAPI (1,000+ Pokémon), the Pokémon TCG API (150+ sets, 10,000+ cards), and the TMDB API for related media. Google OAuth 2.0 streamlines sign-in, with user data persisted on MongoDB Atlas. I built an AI navigation assistant with Google Gemini and prompt engineering, and reduced redundant API calls through debounced search, client-side caching, and on-demand pagination. Shipped live on Vercel and Render.',
+  },
+  {
     title: 'Evaluator Audio App',
     tools: ['React Native', 'Typescript', 'Expo Go', 'OpenSheetMusicDisplay API', 'Dynamic Time Warping Algorithm'],
     link: 'https://github.com/JiBing17/Evaluator-Audio-App',
@@ -79,15 +86,6 @@ export const projects = [
     pictures: [project6Main, project6_1, project6_2, project6_3],
     description:
       'Your on-demand practice guide, allowing you to practice with score progress visualization and mistake detection anytime, anywhere.',
-  },
-  {
-    title: 'PokeWorld',
-    tools: ['React', 'Node.js', 'MongoDB', 'Express.js', 'TailwindCSS', 'MUI'],
-    link: 'https://github.com/JiBing17/pokemonAPI',
-    linkLabel: 'View on GitHub',
-    pictures: [project1Main, project1, project1_2, project1_3, project1_4, project1_5, project1_6, project1_7, project1_8, project1_9, project1_10, project1_11],
-    description:
-      'I developed a Pokémon MERN stack web application using PokeAPI, featuring secure user authentication, a responsive UI, and advanced Pokémon display with sorting, search, and pagination. Users can create accounts to manage favorites, while the backend handles the data with error handling.',
   },
   {
     title: 'BoilerFinds – Discover. Connect. Share.',
