@@ -61,7 +61,7 @@ export const projects = [
   {
     title: 'TimeScale Creator Online',
     tools: ['ReactJS', 'Typescript', 'Model Context Protocol', 'Fastify', 'GeoGPT'],
-    link: 'https://dev.timescalecreator.org/',
+    link: 'https://tsconline.timescalecreator.org/datapacks',
     linkLabel: 'Visit Site',
     featured: true,
     pictures: [project7Main, project7_1, project7_2, project7_3, project7_4],
